@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: contact
+    description: Website enquiry and application submissions
 paths:
   /healthz:
     get:
@@ -24,6 +26,56 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /enquiries:
+    post:
+      operationId: sendEnquiry
+      tags: [contact]
+      summary: Send a website enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnquiryInput"
+      responses:
+        "200":
+          description: Enquiry accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResponse"
+        "400":
+          description: Invalid enquiry
+        "429":
+          description: Too many requests
+        "500":
+          description: Mail delivery failed
+  /applications:
+    post:
+      operationId: submitApplication
+      tags: [contact]
+      summary: Submit a career application with a resume
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/ApplicationInput"
+      responses:
+        "200":
+          description: Application accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResponse"
+        "400":
+          description: Invalid application
+        "413":
+          description: Resume too large
+        "429":
+          description: Too many requests
+        "500":
+          description: Mail delivery failed
 components:
   schemas:
     HealthStatus:
@@ -33,4 +85,90 @@ components:
           type: string
       required:
         - status
+    EnquiryInput:
+      type: object
+      required:
+        - audience
+        - fullName
+        - email
+        - phone
+        - areaOfInterest
+        - message
+      properties:
+        audience:
+          type: string
+          enum: [Candidate, Employer]
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        email:
+          type: string
+          maxLength: 254
+        phone:
+          type: string
+          minLength: 5
+          maxLength: 40
+        companyName:
+          type: ["string", "null"]
+          maxLength: 160
+        areaOfInterest:
+          type: string
+          minLength: 2
+          maxLength: 180
+        message:
+          type: string
+          minLength: 10
+          maxLength: 5000
+    ApplicationInput:
+      type: object
+      required:
+        - fullName
+        - email
+        - phone
+        - currentLocation
+        - role
+        - yearsOfExperience
+        - resume
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        email:
+          type: string
+          maxLength: 254
+        phone:
+          type: string
+          minLength: 5
+          maxLength: 40
+        currentLocation:
+          type: string
+          minLength: 2
+          maxLength: 160
+        role:
+          type: string
+          minLength: 2
+          maxLength: 160
+        yearsOfExperience:
+          type: string
+          maxLength: 80
+        linkedin:
+          type: string
+          maxLength: 300
+        message:
+          type: string
+          maxLength: 5000
+        resume:
+          type: string
+    SubmissionResponse:
+      type: object
+      required:
+        - success
+        - message
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
 

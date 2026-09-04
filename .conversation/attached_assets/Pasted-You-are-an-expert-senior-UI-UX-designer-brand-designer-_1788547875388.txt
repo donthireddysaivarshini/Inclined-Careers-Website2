@@ -1,0 +1,1346 @@
+You are an expert senior UI/UX designer, brand designer, frontend engineer, and conversion-focused website strategist.
+
+Build a premium, modern, responsive recruitment and career consultancy website for:
+
+BRAND:
+Inclined Careers
+
+TAGLINE:
+"Connecting You to the Right Path."
+
+REFERENCE:
+legacyituk.in
+
+Use the reference website only as a general reference for the type of recruitment/business website and information architecture.
+
+DO NOT COPY its design, layout, branding, text, images, or components.
+
+The new Inclined Careers website should feel significantly more premium, modern, trustworthy, polished, and conversion-focused than the reference.
+
+==================================================
+1. BUSINESS POSITIONING
+==================================================
+
+Inclined Careers is a professional recruitment and career support company serving professionals and employers, with a strong focus on opportunities in the United States.
+
+The website should primarily serve TWO audiences:
+
+PRIMARY AUDIENCE:
+Job seekers / candidates looking for legitimate career opportunities and professional recruitment support.
+
+SECONDARY AUDIENCE:
+Employers and organizations looking for qualified talent and recruitment/staffing support.
+
+The website should make both audiences immediately understand what Inclined Careers does.
+
+However, the primary conversion journey should be candidate-focused.
+
+Primary candidate CTA:
+"Explore Opportunities"
+
+Secondary candidate CTA:
+"Apply Now"
+
+Employer CTA:
+"Hire the Right Talent"
+
+General CTA:
+"Talk to Our Team"
+
+The website must NOT feel like a generic job board.
+
+It should feel like a premium human-led recruitment and career consultancy.
+
+Core brand message:
+
+"Connecting You to the Right Path."
+
+Important trust message:
+
+"No Commission From Your Job"
+
+Inclined Careers does not take any percentage or commission from a candidate's salary after they get a job.
+
+There are:
+- No placement commissions
+- No salary deductions
+- No post-placement charges
+
+Once a candidate is placed, they do not owe Inclined Careers or its team a percentage of their paycheck.
+
+This should be prominently displayed as a trust/conversion element on the homepage and also explained in more detail in the About page.
+
+==================================================
+2. WEBSITE STRUCTURE
+==================================================
+
+Create exactly 5 primary pages:
+
+1. Home
+2. About Us
+3. Services
+4. Careers
+5. Contact Us
+
+Use a consistent global navigation.
+
+Desktop navigation:
+
+LOGO | Home | About Us | Services | Careers | Contact Us | [Talk to Our Team]
+
+Mobile:
+- Hamburger navigation
+- Sticky/highly visible CTA
+- Clean mobile menu
+
+The header should be elegant and minimal.
+
+Do NOT overcrowd the navigation.
+
+==================================================
+3. BRAND / VISUAL DESIGN
+==================================================
+
+The uploaded Inclined Careers logo is the primary brand asset.
+
+USE THE UPLOADED LOGO.
+
+Do not redraw it.
+Do not alter its proportions.
+Do not modify its typography.
+Do not change its colors.
+
+The logo contains:
+- Deep navy
+- Metallic gold
+- White
+
+Approximate UI palette based on the uploaded logo:
+
+Primary Navy:
+#01112B
+
+Deep Navy:
+#001C3D
+
+Gold:
+#DBA22B
+
+Secondary Gold:
+#C59B27
+
+White:
+#FFFFFF
+
+Off-white:
+#F7F8FA
+
+Light neutral:
+#EEF1F5
+
+Dark text:
+#101828
+
+IMPORTANT:
+Do not use metallic gradients everywhere.
+
+Use mostly flat navy and gold for the interface.
+
+Reserve the richer metallic appearance for:
+- Logo
+- Small premium accents
+- Important decorative details
+
+The overall visual language should be:
+
+Premium
+Minimal
+Professional
+Trustworthy
+Human
+Modern
+US recruitment / staffing
+Corporate but approachable
+
+Avoid:
+- Generic stock-photo-heavy recruitment designs
+- Excessive gradients
+- Excessive animations
+- Neon colors
+- Huge rounded cards everywhere
+- Cheap-looking templates
+- Excessive shadows
+- Overly playful illustrations
+- Cluttered sections
+
+==================================================
+4. TYPOGRAPHY
+==================================================
+
+Use a premium modern sans-serif font.
+
+Preferred:
+Inter
+
+Alternative:
+Manrope
+
+Use:
+- Strong large headlines
+- Comfortable body text
+- Clear hierarchy
+- Medium font weights
+- Generous whitespace
+
+Headlines should feel confident but not aggressive.
+
+Example:
+
+"Your Next Opportunity Starts With the Right Path."
+
+Supporting copy should be concise and human.
+
+==================================================
+5. GLOBAL UX PRINCIPLES
+==================================================
+
+The website must be conversion-focused.
+
+Every important page should answer:
+
+1. Who are we?
+2. What do we do?
+3. Who do we help?
+4. Why should someone trust us?
+5. What should they do next?
+
+Use clear CTAs throughout the website.
+
+Avoid vague CTA text such as:
+"Learn More"
+
+Prefer:
+"Explore Opportunities"
+"Apply Now"
+"Hire the Right Talent"
+"Talk to Our Team"
+"Submit Your Resume"
+"Send an Enquiry"
+
+Make the website feel human-led.
+
+Do NOT make it feel like an automated job application portal.
+
+==================================================
+6. HOME PAGE
+==================================================
+
+Create a premium hero section.
+
+Hero headline:
+
+"Connecting You to the Right Path."
+
+Alternative supporting headline:
+
+"Helping professionals find the right opportunities and helping employers connect with the right talent."
+
+Supporting paragraph:
+
+"At Inclined Careers, we believe the right career opportunity can shape more than a job—it can shape a person's future. Our recruitment team provides personalized support while connecting qualified professionals with opportunities aligned with their skills, experience, and career goals."
+
+Primary CTA:
+"Explore Opportunities"
+
+Secondary CTA:
+"Talk to Our Team"
+
+Add a subtle trust statement near the CTA:
+
+"Human-led recruitment support. No commission from your job."
+
+The hero should visually communicate:
+- Career growth
+- Professional opportunity
+- Trust
+- Direction
+- Human support
+
+Use a sophisticated visual treatment rather than a generic office stock photo.
+
+Possible visual:
+A premium abstract career-path / upward trajectory visual inspired subtly by the gold arrow in the Inclined Careers logo.
+
+Do NOT reproduce the logo arrow as a giant decorative element.
+
+==================================================
+7. HOME — TRUST STRIP
+==================================================
+
+Immediately below hero, create a concise trust/value strip.
+
+Possible items:
+
+Human-Led Support
+Qualified Talent
+Personalized Guidance
+No Salary Commission
+
+Keep this visually minimal.
+
+==================================================
+8. HOME — TWO AUDIENCES
+==================================================
+
+Create a section titled:
+
+"Built Around People. Focused on the Right Opportunities."
+
+Create two premium panels/cards.
+
+CARD 1 — FOR CANDIDATES
+
+Heading:
+"Looking for Your Next Opportunity?"
+
+Copy:
+
+"Whether you're starting your career, considering a change, or looking for a better opportunity, our team provides personalized support throughout your job search."
+
+CTA:
+"Explore Opportunities"
+
+CARD 2 — FOR EMPLOYERS
+
+Heading:
+"Looking for the Right Talent?"
+
+Copy:
+
+"We help organizations connect with qualified professionals whose skills, experience, and career goals align with their hiring requirements."
+
+CTA:
+"Hire the Right Talent"
+
+This section should make the dual audience model immediately clear.
+
+==================================================
+9. HOME — ABOUT INCLINED CAREERS
+==================================================
+
+Heading:
+
+"More Than a Job. A Path Forward."
+
+Use this content:
+
+"At Inclined Careers, we understand that a career is more than just a job. It represents a person's future, dreams, stability, family, and the years of hard work they have invested in building a life for themselves.
+
+For many professionals across the United States, finding the right opportunity can become even more challenging when career decisions are connected with visa timelines, work authorization, changing job markets, and uncertainty about what comes next.
+
+We have seen talented and hardworking people struggle—not because they lack skills, but because they need the right opportunity, the right guidance, and the right people supporting them at the right time.
+
+That understanding is one of the reasons Inclined Careers was started."
+
+CTA:
+"Learn About Us"
+
+Keep this section visually clean.
+
+==================================================
+10. HOME — INDUSTRIES
+==================================================
+
+Heading:
+
+"Specialized Recruitment Across High-Demand Sectors"
+
+Create five premium industry cards:
+
+IT & Technology
+
+Healthcare
+
+Data Center Operations
+
+Embedded Systems
+
+Business & Professional
+
+Each card should have:
+- Minimal line/icon
+- Industry name
+- One short description
+- Hover interaction
+
+Do not overdo iconography.
+
+==================================================
+11. HOME — SERVICES PREVIEW
+==================================================
+
+Heading:
+
+"Recruitment Support That Moves Careers Forward"
+
+Display:
+
+Talent Acquisition
+Permanent Staffing
+Contract Staffing
+Candidate Sourcing & Screening
+Recruitment Process Support
+Specialized Recruitment
+
+Each should have a short description.
+
+CTA:
+"Explore Our Services"
+
+==================================================
+12. HOME — HOW WE WORK
+==================================================
+
+Create a simple 4-step process.
+
+Heading:
+
+"A More Human Approach to Recruitment"
+
+STEP 1:
+Understand
+
+"We take the time to understand your goals, skills, experience, and requirements."
+
+STEP 2:
+Identify
+
+"We identify opportunities or talent that align with the right requirements."
+
+STEP 3:
+Connect
+
+"We help facilitate meaningful connections between candidates and employers."
+
+STEP 4:
+Support
+
+"We provide guidance throughout the recruitment journey."
+
+Use a horizontal timeline on desktop and vertical timeline on mobile.
+
+==================================================
+13. HOME — NO COMMISSION TRUST SECTION
+==================================================
+
+This is an important conversion section.
+
+Use a visually distinctive but minimal navy/gold section.
+
+Heading:
+
+"No Commission From Your Job."
+
+Copy:
+
+"Your success belongs to you.
+
+Inclined Careers does not take any percentage or commission from your salary after you get a job.
+
+Once you are placed, you don't owe us or any member of our team a single penny from your paycheck.
+
+There are no placement commissions, salary deductions, or post-placement charges."
+
+Add a small CTA:
+
+"Talk to Our Team"
+
+This should be one of the strongest trust sections on the homepage.
+
+==================================================
+14. HOME — LAUNCH SPECIAL
+==================================================
+
+Create a premium promotional section.
+
+Heading:
+
+"Launch Special"
+
+Subheading:
+
+"We're celebrating our launch with special pricing!"
+
+Pricing:
+
+$299
+
+$199
+
+Highlight:
+
+"Save $100"
+
+Offer validity:
+
+"Offer valid through December 2026."
+
+IMPORTANT:
+Do not invent what the $199/$299 service specifically represents.
+
+Present this as the provided launch offer without adding unsupported claims.
+
+CTA:
+"Get Started"
+
+If appropriate, the CTA can lead to Contact Us or the enquiry form.
+
+==================================================
+15. HOME — FINAL CTA
+==================================================
+
+Create a strong final CTA.
+
+Heading:
+
+"Your Next Opportunity Could Be the Right One."
+
+Copy:
+
+"Whether you're looking for your next career opportunity or searching for the right talent for your organization, we're here to help you take the next step."
+
+Buttons:
+
+"Explore Opportunities"
+
+"Hire the Right Talent"
+
+==================================================
+16. ABOUT US PAGE
+==================================================
+
+Hero:
+
+"About Inclined Careers"
+
+Subheading:
+
+"Connecting people, opportunities, and organizations to the right path."
+
+Use the supplied company story.
+
+Content:
+
+"At Inclined Careers, we understand that a career is more than just a job. It represents a person’s future, dreams, stability, family, and the years of hard work they have invested in building a life for themselves.
+
+For many professionals across the United States, finding the right opportunity can become even more challenging when career decisions are connected with visa timelines, work authorization, changing job markets, and uncertainty about what comes next.
+
+We have seen talented and hardworking people struggle—not because they lack skills, but because they need the right opportunity, the right guidance, and the right people supporting them at the right time.
+
+That understanding is one of the reasons Inclined Careers was started.
+
+We built Inclined Careers with a professional recruitment team committed to supporting people in their career journey while helping employers connect with qualified and motivated talent.
+
+Whether someone is searching for their first opportunity, considering a career change, navigating an important stage of their professional journey, or simply looking for a better future, we want them to know that they don’t have to navigate the process alone.
+
+At the same time, we understand that every employer has different needs. Our team works to understand those requirements and connect organizations with professionals whose skills, experience, and career goals align with the opportunity."
+
+Then display:
+
+"Connecting You to the Right Path."
+
+==================================================
+17. ABOUT US — OUR TEAM
+==================================================
+
+Heading:
+
+"About Our Team"
+
+Use:
+
+"Inclined Careers was started after seeing how many students and job seekers across the USA struggle to find the right opportunities while also worrying about their careers, future, work authorization, and visa timelines.
+
+That’s why we built a dedicated team focused on providing real 1:1 support instead of relying on automated job-application systems.
+
+Each person works directly with a recruiter Monday through Friday, focusing on legitimate opportunities that align with their experience, skills, interests, and career goals.
+
+We believe everyone deserves genuine support during their job search, with a real person who understands their situation, communicates with them, and works alongside them throughout the journey."
+
+Design this as a human-centered section.
+
+==================================================
+18. ABOUT — TRUST / NO COMMISSION
+==================================================
+
+Create a dedicated section:
+
+"No Commission From Your Job"
+
+Use the complete supplied copy.
+
+Make this visually prominent.
+
+==================================================
+19. SERVICES PAGE
+==================================================
+
+Hero:
+
+"Recruitment Solutions Built Around Your Needs"
+
+Supporting copy:
+
+"From talent acquisition to specialized recruitment, Inclined Careers helps organizations connect with professionals who match their skills, experience, and hiring requirements."
+
+Create six premium service sections/cards.
+
+1. Talent Acquisition
+
+"Connecting employers with qualified professionals who match their skills, experience, and hiring requirements."
+
+2. Permanent Staffing
+
+"Helping organizations identify and hire the right professionals for long-term, full-time opportunities."
+
+3. Contract Staffing
+
+"Providing qualified talent for contract, temporary, and project-based workforce requirements."
+
+4. Candidate Sourcing & Screening
+
+"Finding potential candidates, reviewing their qualifications, and conducting initial screening before presenting suitable profiles to employers."
+
+5. Recruitment Process Support
+
+"Supporting the hiring process from candidate identification and interview coordination through selection and onboarding."
+
+6. Specialized Recruitment
+
+"Providing recruitment support across IT & Technology, Healthcare, Data Center Operations, Embedded Systems, and Business & Professional sectors."
+
+Add a "For Employers" CTA:
+
+"Tell Us What Talent You Need"
+
+This should link to Contact Us.
+
+==================================================
+20. CAREERS PAGE
+==================================================
+
+This page is primarily for candidates.
+
+Hero:
+
+"Find Your Next Opportunity"
+
+Supporting text:
+
+"Explore career opportunities across technology, healthcare, data center operations, embedded systems, and business & professional roles."
+
+Create industry sections.
+
+IT & TECHNOLOGY
+
+- Software Engineer
+- Cloud Engineer
+- Cybersecurity Engineer
+- Network Engineer
+- Data Engineer
+
+HEALTHCARE
+
+- Registered Nurse
+- Healthcare Administrator
+- Medical Coder
+- Healthcare IT Specialist
+- Clinical Coordinator
+
+DATA CENTER OPERATIONS
+
+- Data Center Technician
+- Data Center Engineer
+- Network Technician
+- Infrastructure Technician
+- Critical Facilities Technician
+
+EMBEDDED SYSTEMS
+
+- Embedded Systems Engineer
+- Firmware Engineer
+- Hardware Engineer
+- Electrical Engineer
+- Validation Engineer
+
+BUSINESS & PROFESSIONAL
+
+- Business Analyst
+- Project Manager
+- Product Manager
+- Financial Analyst
+- Operations Analyst
+
+At the bottom:
+
+"Don’t see your role?"
+
+"Connect with our team to explore additional opportunities."
+
+CTA:
+"Submit Your Resume"
+
+==================================================
+21. CAREERS APPLICATION FORM
+==================================================
+
+Create a professional application form.
+
+Fields:
+
+Full Name
+Email Address
+Phone Number
+Current Location
+Job / Role
+Years of Experience
+LinkedIn Profile
+Resume Upload
+Message
+
+Resume upload:
+- Accept PDF and DOC/DOCX
+- Clearly show accepted file formats
+- Show selected filename
+- Validate file size
+- Show upload state
+- Show success/error state
+
+CTA:
+"Submit Application"
+
+Do not make the form unnecessarily long.
+
+==================================================
+22. APPLICATION EMAIL INTEGRATION
+==================================================
+
+Implement the application submission using a backend API and Nodemailer.
+
+DO NOT put SMTP credentials in frontend code.
+
+Use environment variables.
+
+Example:
+
+SMTP_HOST
+SMTP_PORT
+SMTP_USER
+SMTP_PASSWORD
+MAIL_FROM
+MAIL_TO
+
+When a candidate submits the application:
+
+1. Validate all fields.
+2. Validate email.
+3. Validate resume file.
+4. Upload/process the resume securely.
+5. Send an email to the configured Inclined Careers email address.
+6. Attach the candidate's resume to the email.
+7. Include all submitted candidate information in a clean HTML email.
+8. Include the application timestamp.
+9. Include the selected job/role.
+10. Return a success response to the frontend.
+
+Email subject format:
+
+"New Career Application - [Job/Role] - [Candidate Name]"
+
+Email should contain:
+
+Candidate Information
+---------------------
+Name:
+Email:
+Phone:
+Current Location:
+Job / Role:
+Years of Experience:
+LinkedIn:
+
+Message:
+
+Resume:
+Attached to this email.
+
+IMPORTANT SECURITY REQUIREMENTS:
+
+- Never expose SMTP credentials in frontend code.
+- Use server-side environment variables.
+- Validate file type.
+- Validate file size.
+- Sanitize user input.
+- Prevent malicious file uploads.
+- Add basic rate limiting to application submission.
+- Never expose SMTP configuration to the browser.
+
+==================================================
+23. CONTACT US PAGE
+==================================================
+
+Hero:
+
+"Let's Connect"
+
+Supporting text:
+
+"Whether you're looking for your next opportunity or searching for the right talent, our team is here to help."
+
+Display contact information:
+
+Inclined Careers
+
+Phone:
++1808-400-3068
+
+Email:
+info@inclinedcareers.in
+
+Location:
+Hyderabad, India
+
+Social:
+
+Instagram:
+https://www.instagram.com/inclinedcareers?igsi=eWZvenZ6bHFtaXA5
+
+LinkedIn:
+Inclined Careers
+
+IMPORTANT:
+Do NOT add Facebook anywhere.
+
+The user specifically requested that the Facebook column/link be removed.
+
+==================================================
+24. CONTACT / ENQUIRY FORM
+==================================================
+
+Create a conversion-focused enquiry form.
+
+Heading:
+
+"How Can We Help?"
+
+First field:
+
+"I am a..."
+
+Dropdown:
+- Candidate
+- Employer
+
+Fields:
+
+Full Name
+Email Address
+Phone Number
+Company Name (show primarily when Employer is selected)
+Area of Interest / Role
+Message
+
+CTA:
+
+"Send Enquiry"
+
+Use smart conditional fields.
+
+If Candidate:
+show candidate-related fields.
+
+If Employer:
+show company-related fields.
+
+Keep the form simple.
+
+==================================================
+25. ENQUIRY EMAIL INTEGRATION
+==================================================
+
+Use the same Nodemailer backend approach.
+
+When submitted:
+
+Send the enquiry to:
+
+info@inclinedcareers.in
+
+Email subject:
+
+"New Website Enquiry - [Candidate/Employer] - [Name]"
+
+Include all submitted information.
+
+Use HTML email formatting.
+
+Show frontend states:
+
+Submitting...
+Success:
+"Thank you for reaching out. Our team will get back to you soon."
+
+Error:
+"Something went wrong while sending your enquiry. Please try again or contact us directly."
+
+Do not expose SMTP credentials.
+
+==================================================
+26. EMAIL LIMIT / FREE USAGE
+==================================================
+
+The implementation should be compatible with a low-volume/free SMTP/email setup.
+
+The site should NOT hard-code a specific paid email provider.
+
+Keep all email configuration through environment variables.
+
+Structure the email functionality so the SMTP provider can be changed without changing the frontend.
+
+Use Nodemailer on the server/backend.
+
+Do NOT attempt to send emails directly from the browser.
+
+==================================================
+27. FOOTER
+==================================================
+
+Create a premium dark navy footer.
+
+Include:
+
+Inclined Careers logo
+
+"Connecting You to the Right Path."
+
+Navigation:
+Home
+About Us
+Services
+Careers
+Contact Us
+
+Contact:
+
++1808-400-3068
+info@inclinedcareers.in
+Hyderabad, India
+
+Social:
+
+Instagram
+LinkedIn
+
+DO NOT INCLUDE FACEBOOK.
+
+Add:
+
+"No Commission From Your Job"
+
+as a small trust statement.
+
+Copyright:
+
+© 2026 Inclined Careers. All rights reserved.
+
+==================================================
+28. RESPONSIVE DESIGN
+==================================================
+
+The website must be fully responsive.
+
+Desktop:
+1440px
+1280px
+1024px
+
+Tablet:
+768px
+
+Mobile:
+390px
+375px
+360px
+
+Do not simply shrink the desktop design.
+
+Create intentional mobile layouts.
+
+Mobile requirements:
+
+- Sticky CTA where appropriate
+- Large tap targets
+- Easy-to-use forms
+- No horizontal overflow
+- Proper spacing
+- Readable typography
+- Mobile-friendly file upload
+- Mobile navigation
+- CTA buttons should be easy to reach
+- Cards should stack naturally
+
+==================================================
+29. ANIMATIONS
+==================================================
+
+Use subtle premium animations.
+
+Examples:
+
+- Fade-up sections
+- Gentle hover transitions
+- Card elevation
+- Button hover
+- Navigation transitions
+- Smooth scrolling
+- Subtle hero movement
+
+Avoid:
+- Excessive parallax
+- Bouncing animations
+- Constant motion
+- Slow page transitions
+- Anything that hurts usability
+
+Animations should support the premium brand rather than distract from it.
+
+Respect prefers-reduced-motion.
+
+==================================================
+30. ACCESSIBILITY
+==================================================
+
+Follow accessibility best practices.
+
+Requirements:
+
+- Semantic HTML
+- Proper heading hierarchy
+- Accessible labels
+- Keyboard navigation
+- Visible focus states
+- Sufficient color contrast
+- Alt text for images
+- Accessible mobile navigation
+- Accessible form validation
+- Error messages associated with fields
+
+==================================================
+31. SEO
+==================================================
+
+Implement basic SEO for all five pages.
+
+Home title:
+
+Inclined Careers | Connecting You to the Right Path
+
+Home description:
+
+"Inclined Careers connects professionals with career opportunities and helps employers find qualified talent across technology, healthcare, data center operations, embedded systems, and business sectors."
+
+About title:
+
+About Inclined Careers | Career & Recruitment Support
+
+Services title:
+
+Recruitment & Staffing Services | Inclined Careers
+
+Careers title:
+
+Careers & Job Opportunities | Inclined Careers
+
+Contact title:
+
+Contact Inclined Careers | Recruitment & Career Support
+
+Use:
+- Semantic headings
+- Meta descriptions
+- Open Graph metadata
+- Proper canonical URLs
+- Descriptive image alt text
+- Organization structured data where appropriate
+
+Do not keyword-stuff.
+
+==================================================
+32. PERFORMANCE
+==================================================
+
+Optimize for fast loading.
+
+Requirements:
+
+- Optimized images
+- Lazy-load non-critical images
+- Avoid unnecessary dependencies
+- Minimal JavaScript
+- Reusable components
+- Efficient CSS
+- Avoid huge background videos
+- Good Core Web Vitals
+
+The website should feel fast on mobile connections.
+
+==================================================
+33. COMPONENT ARCHITECTURE
+==================================================
+
+Build reusable components.
+
+Suggested structure:
+
+Header
+Footer
+Button
+SectionHeading
+IndustryCard
+ServiceCard
+AudienceCard
+ProcessStep
+TrustSection
+CTASection
+ContactForm
+CareerApplicationForm
+FileUpload
+FormField
+Toast / Notification
+
+Do not duplicate components unnecessarily.
+
+==================================================
+34. DESIGN DETAILS
+==================================================
+
+Use generous whitespace.
+
+Section widths:
+max-width around 1200–1280px.
+
+Cards:
+Use subtle borders and very light shadows.
+
+Buttons:
+
+Primary:
+Gold background
+Dark navy text
+
+Secondary:
+Transparent/white or navy outline depending on section
+
+Dark sections:
+Gold CTA
+
+Use slightly rounded corners but avoid excessive pill-shaped UI.
+
+Suggested radius:
+8–14px.
+
+Do not make everything a rounded rectangle.
+
+Use thin gold lines as subtle brand accents.
+
+The gold arrow/upward movement concept from the logo can inspire visual direction.
+
+==================================================
+35. IMPORTANT COPY RULE
+==================================================
+
+Use ONLY information provided in this prompt.
+
+Do not invent:
+
+- Office locations beyond Hyderabad, India
+- Number of employees
+- Years in business
+- Client logos
+- Client names
+- Candidate placement numbers
+- Success percentages
+- Testimonials
+- Awards
+- Certifications
+- Partnerships
+- US office addresses
+- Fake job listings
+- Fake reviews
+
+Do not fabricate trust signals.
+
+If a section would normally require testimonials, statistics, or logos, either:
+
+1. omit the section, OR
+2. create a visually appropriate placeholder area that is clearly marked for future content,
+
+but do not invent data.
+
+==================================================
+36. IMPORTANT BRAND POSITIONING
+==================================================
+
+The site should NOT make unsupported promises such as:
+
+"Guaranteed job"
+"100% placement"
+"Guaranteed visa"
+"Guaranteed sponsorship"
+"Guaranteed employment"
+
+Do not imply that Inclined Careers guarantees employment, visa approval, or immigration outcomes.
+
+Use professional and responsible language.
+
+==================================================
+37. CONVERSION STRATEGY
+==================================================
+
+The primary conversion journey should be:
+
+HOME
+↓
+Explore Opportunities
+↓
+CAREERS
+↓
+Select role / Submit Resume
+↓
+Application Form
+↓
+Email with Resume Attachment
+
+Secondary journey:
+
+HOME
+↓
+Hire the Right Talent
+↓
+CONTACT
+↓
+Employer Enquiry
+↓
+Email Notification
+
+General journey:
+
+Any Page
+↓
+Talk to Our Team
+↓
+Contact Form
+
+Keep CTAs visible throughout the website.
+
+==================================================
+38. VISUAL HIERARCHY
+==================================================
+
+Homepage hierarchy:
+
+1. Hero
+2. Trust/value strip
+3. Candidate + Employer paths
+4. About
+5. Industries
+6. Services
+7. Recruitment process
+8. No Commission trust section
+9. Launch Special
+10. Final CTA
+11. Footer
+
+The first screen should communicate the brand and CTA within seconds.
+
+==================================================
+39. FINAL DESIGN DIRECTION
+==================================================
+
+Imagine the design language of a premium modern recruitment consultancy combined with a high-end professional services company.
+
+NOT:
+A generic job board.
+
+NOT:
+A cheap HR template.
+
+NOT:
+An overly corporate banking website.
+
+Instead:
+
+Premium
+Minimal
+Human
+Trustworthy
+Modern
+Conversion-focused
+Confident
+Elegant
+
+The uploaded Inclined Careers logo should feel completely at home in the design.
+
+Use navy as the visual foundation.
+
+Use gold strategically for:
+- CTAs
+- Highlights
+- Dividers
+- Icons
+- Important numbers
+- Hover states
+- Premium accents
+
+Use white and soft neutral backgrounds to prevent the website from becoming visually heavy.
+
+==================================================
+40. FINAL IMPLEMENTATION REQUIREMENT
+==================================================
+
+Before considering the website complete, verify:
+
+[ ] All 5 pages exist
+[ ] Navigation works
+[ ] Mobile navigation works
+[ ] All CTAs work
+[ ] Careers application form works
+[ ] Resume upload works
+[ ] Resume is attached to application email
+[ ] Contact enquiry form works
+[ ] Enquiry email works
+[ ] SMTP credentials are server-side only
+[ ] Environment variables are used
+[ ] Validation works
+[ ] Error states work
+[ ] Success states work
+[ ] Facebook is completely removed
+[ ] Instagram link is correct
+[ ] LinkedIn is present as a placeholder/link-ready item
+[ ] Phone number is correct
+[ ] Email is correct
+[ ] Hyderabad, India is displayed
+[ ] No unsupported statistics/testimonials/logos are invented
+[ ] No fake job listings are invented
+[ ] Website is responsive
+[ ] Website is accessible
+[ ] SEO metadata exists
+[ ] Logo is used without modification
+[ ] Design consistently follows navy/gold/white brand system
+[ ] Website feels premium and conversion-focused
+
+Do not stop at generating static mockups.
+
+Implement the complete frontend interaction flow and the backend email endpoints required for the enquiry and career application forms.
+
+The final result should look like a real, launch-ready recruitment consultancy website rather than an AI-generated template.

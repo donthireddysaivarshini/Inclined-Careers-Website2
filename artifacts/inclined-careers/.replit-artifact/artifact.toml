@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Inclined Careers"
+description = "A premium recruitment and career consultancy website that helps candidates discover opportunities and employers connect with qualified talent across high-demand sectors."
+version = "1.0.0"
+id = "artifacts/inclined-careers"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21177
+
+[services.development]
+run = "pnpm --filter @workspace/inclined-careers run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/inclined-careers", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/inclined-careers/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21177"
+BASE_PATH = "/"
