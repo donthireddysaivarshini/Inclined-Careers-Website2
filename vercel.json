@@ -3,6 +3,7 @@
   "buildCommand": "pnpm --filter @workspace/inclined-careers run build",
   "outputDirectory": "artifacts/inclined-careers/dist",
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
