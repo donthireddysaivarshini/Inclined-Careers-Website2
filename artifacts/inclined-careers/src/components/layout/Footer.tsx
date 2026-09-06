@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Instagram, Linkedin, Mail, Phone, ShieldCheck } from "lucide-react";
+import { Heart, Instagram, Linkedin, Mail, Phone, ShieldCheck } from "lucide-react";
 import { navItems } from "@/constants/navigation";
 import { Logo } from "./Logo";
 
@@ -71,10 +71,28 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-[#011330]">
-        <div className="container-wide flex flex-col gap-2 py-5 text-[.68rem] uppercase tracking-[.14em] text-[#98a9b5] sm:flex-row sm:justify-between">
+      <div className="border-t border-white/10">
+        <div className="container-wide flex flex-col items-center gap-3 py-6 text-xs text-[#98a9b5] sm:flex-row sm:justify-between">
           <span>© 2026 Inclined Careers. All rights reserved.</span>
-          <span>Connecting You to the Right Path.</span>
+
+          <div className="flex justify-center items-center gap-1">
+            Made with <Heart className="inline h-4 w-4 text-red-500 mx-1" /> by
+            <a
+              href="https://staffarc.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-orange-600 hover:underline"
+            >
+              <img
+                src="https://www.staffarc.in/images/Staffarc-logo.png"
+                alt="StaffArc logo"
+                className="h-5 w-5 object-contain"
+              />
+              StaffArc
+            </a>
+          </div>
+
+          <span className="text-[.68rem] uppercase tracking-[.14em]">Connecting You to the Right Path.</span>
         </div>
       </div>
     </footer>

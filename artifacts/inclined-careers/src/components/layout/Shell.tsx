@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
+import { ScrollToTop } from "@/components/shared/ScrollToTop";
 
 export function Shell({ children }: { children: ReactNode }) {
   const [location] = useLocation();
@@ -14,6 +15,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <div className={`flex-1 ${!isHome ? "pt-24 sm:pt-28" : ""}`}>{children}</div>
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 }
