@@ -18,7 +18,7 @@ export default function About() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#102944]">
               Connecting people, opportunities, and organizations to the{" "}
               <em className="font-medium text-[#BA780E]">right path.</em>
             </h1>
@@ -38,7 +38,7 @@ export default function About() {
             >
               <div className="p-7 sm:p-9 relative z-10">
                 <SectionLabel>The Mission</SectionLabel>
-                <h2 className="serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#011330] mt-3">
+                <h2 className="serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#102944] mt-3">
                   A Career Is More Than Just A Job.
                 </h2>
                 <p className="mt-4 text-sm sm:text-base leading-relaxed text-[#5d6971] max-w-xl">
@@ -56,7 +56,7 @@ export default function About() {
                   alt="Modern executive consulting team collaborating"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/65 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102944]/65 via-transparent to-transparent" />
               </div>
             </motion.div>
 
@@ -64,11 +64,11 @@ export default function About() {
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.25 }}
-              className="md:col-span-1 rounded-2xl border border-[#BA780E]/30 bg-[#011330] text-[#f8f4ec] p-7 sm:p-9 flex flex-col justify-between shadow-md relative overflow-hidden group"
+              className="md:col-span-1 rounded-2xl border border-[#BA780E]/30 bg-[#102944] text-[#f8f4ec] p-7 sm:p-9 flex flex-col justify-between shadow-md relative overflow-hidden group"
             >
               <div className="relative z-10">
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BA780E]/40 bg-[#011330] px-3 py-1 text-[.66rem] uppercase tracking-wider text-[#BA780E]">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BA780E]/40 bg-[#102944] px-3 py-1 text-[.66rem] uppercase tracking-wider text-[#BA780E]">
                     <Users size={12} />
                     <span>Human-to-Human</span>
                   </span>
@@ -98,14 +98,14 @@ export default function About() {
                   <span className="eyebrow text-[#BA780E]">Specialized Advisory</span>
                   <span className="serif text-xl font-semibold text-[#BA780E]">03</span>
                 </div>
-                <h3 className="serif text-2xl sm:text-3xl font-semibold text-[#011330] mt-4">
+                <h3 className="serif text-2xl sm:text-3xl font-semibold text-[#102944] mt-4">
                   Navigating US Careers
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5d6971]">
                   Finding the right path in the United States requires navigating visa timelines, work authorization, and changing job markets. We stand beside you with proactive guidance so you never navigate your career in isolation.
                 </p>
               </div>
-              <div className="mt-8 pt-6 border-t border-[#ded6c7]/80 flex items-center gap-2 text-xs font-bold text-[#011330]">
+              <div className="mt-8 pt-6 border-t border-[#ded6c7]/80 flex items-center gap-2 text-xs font-bold text-[#102944]">
                 <CheckCircle2 size={16} className="text-[#BA780E] shrink-0" />
                 <span>Work Authorization &amp; Timeline Support</span>
               </div>
@@ -115,11 +115,11 @@ export default function About() {
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.25 }}
-              className="md:col-span-2 rounded-2xl border border-[#BA780E]/40 bg-[#011330] text-[#f8f4ec] p-7 sm:p-9 flex flex-col justify-between shadow-xl relative overflow-hidden group"
+              className="md:col-span-2 rounded-2xl border border-[#BA780E]/40 bg-[#102944] text-[#f8f4ec] p-7 sm:p-9 flex flex-col justify-between shadow-xl relative overflow-hidden group"
             >
               <div className="relative z-10">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BA780E]/40 bg-[#011330]/80 px-3.5 py-1 text-[.66rem] uppercase tracking-wider text-[#BA780E] font-bold">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BA780E]/40 bg-[#102944]/80 px-3.5 py-1 text-[.66rem] uppercase tracking-wider text-[#BA780E] font-bold">
                     <ShieldCheck size={13} />
                     <span>Transparent Policy</span>
                   </span>
@@ -135,7 +135,7 @@ export default function About() {
                       Your success belongs entirely to you. Inclined Careers does not take any percentage or commission from your salary after placement. Once you are hired, you never owe us a single penny from your paycheck.
                     </p>
                   </div>
-                  <div className="rounded-xl border border-[#BA780E]/30 bg-[#011330]/90 p-5 backdrop-blur-md text-center">
+                  <div className="rounded-xl border border-[#BA780E]/30 bg-[#102944]/90 p-5 backdrop-blur-md text-center">
                     <span className="serif text-4xl sm:text-5xl font-bold text-[#BA780E]">0%</span>
                     <p className="text-xs uppercase tracking-wider text-[#f8f4ec] font-bold mt-1">
                       Salary Commission
@@ -149,7 +149,7 @@ export default function About() {
                 <span className="text-xs text-[#9eafb8]">No post-placement charges · Complete financial transparency</span>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#BA780E] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#011330] shadow hover:bg-[#BA780E] transition-all"
+                  className="inline-flex items-center gap-2 bg-[#BA780E] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#102944] shadow hover:bg-[#BA780E] transition-all"
                 >
                   Talk to our team
                   <ArrowRight size={14} />

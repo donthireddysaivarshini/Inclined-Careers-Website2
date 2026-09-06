@@ -18,7 +18,7 @@ export default function Services() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#102944]">
               Recruitment solutions built around{" "}
               <em className="font-medium text-[#BA780E]">your needs.</em>
             </h1>
@@ -31,7 +31,7 @@ export default function Services() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-center">
           <ScrollReveal>
             <SectionLabel>Employer recruitment solutions</SectionLabel>
-            <h2 className="serif mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#011330]">
+            <h2 className="serif mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#102944]">
               The right conversation comes first.
             </h2>
             <ul className="mt-5 max-w-xl space-y-2.5 text-sm sm:text-base leading-7 text-[#5d6971]">
@@ -52,7 +52,7 @@ export default function Services() {
               <Link
                 href="/contact"
                 data-testid="link-services-enquiry-top"
-                className="inline-flex items-center gap-3 bg-[#011330] px-5 py-3.5 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#011330] hover:shadow-xl"
+                className="inline-flex items-center gap-3 bg-[#102944] px-5 py-3.5 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#102944] hover:shadow-xl"
               >
                 Tell us what talent you need <ArrowRight size={15} className="text-[#BA780E]" />
               </Link>
@@ -70,11 +70,11 @@ export default function Services() {
                 alt="Executive talent interview in bright glass consulting conference room"
                 className="h-[340px] md:h-[380px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/65 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102944]/65 via-transparent to-transparent" />
             </motion.div>
             <div className="absolute -bottom-4 -left-4 rounded-xl border border-[#BA780E]/40 bg-[#f8f4ec] p-4 shadow-xl max-w-xs backdrop-blur-md">
               <p className="eyebrow text-[#BA780E]">Screened &amp; Vetted</p>
-              <p className="serif text-xs sm:text-sm font-semibold text-[#011330] mt-1">
+              <p className="serif text-xs sm:text-sm font-semibold text-[#102944] mt-1">
                 Rigorous technical and communication qualification before candidate submission.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Services() {
         <div className="container-wide">
           <ScrollReveal>
             <SectionLabel>Comprehensive Recruitment Capabilities</SectionLabel>
-            <h2 className="serif mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#011330]">
+            <h2 className="serif mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#102944]">
               Solutions Engineered for Precision &amp; Speed
             </h2>
           </ScrollReveal>
@@ -111,7 +111,7 @@ export default function Services() {
                     <span className="serif text-3xl font-semibold text-[#BA780E]">0{index + 1}</span>
                     <span className="text-[.66rem] font-bold uppercase tracking-wider text-[#8a969f]">Service</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#011330] group-hover:text-[#BA780E] transition-colors">
+                  <h3 className="text-lg font-bold text-[#102944] group-hover:text-[#BA780E] transition-colors">
                     {title}
                   </h3>
                   <p className="mt-2.5 text-xs sm:text-sm leading-6 text-[#69747b]">{copy}</p>
@@ -127,7 +127,7 @@ export default function Services() {
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <ScrollReveal>
             <SectionLabel>For employers</SectionLabel>
-            <h2 className="serif mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#011330]">
+            <h2 className="serif mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#102944]">
               Tell us what talent you need.
             </h2>
             <p className="mt-4 max-w-lg leading-7 text-sm sm:text-base text-[#5d6971]">
@@ -137,7 +137,7 @@ export default function Services() {
             <Link
               href="/contact"
               data-testid="link-services-enquiry-bottom"
-              className="group mt-6 inline-flex items-center gap-3 border-b-2 border-[#BA780E] pb-1.5 text-xs sm:text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+              className="group mt-6 inline-flex items-center gap-3 border-b-2 border-[#BA780E] pb-1.5 text-xs sm:text-sm font-bold text-[#102944] transition-colors hover:text-[#BA780E]"
             >
               Start hiring consultation{" "}
               <ArrowRight
@@ -158,7 +158,7 @@ export default function Services() {
                 alt="Modern corporate glass architecture representing enterprise hiring partnership"
                 className="h-[280px] md:h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-[#011330]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102944]/80 via-[#102944]/20 to-transparent" />
               <div className="absolute bottom-4 left-5 right-5 text-[#f8f4ec]">
                 <p className="eyebrow text-[#BA780E]">Strategic Partnership</p>
                 <p className="text-xs sm:text-sm text-[#e6e0d7] mt-1">

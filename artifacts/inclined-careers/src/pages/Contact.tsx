@@ -79,7 +79,7 @@ export default function Contact() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#102944]">
               Let's find the <em className="font-medium text-[#BA780E]">right path.</em>
             </h1>
             <p className="mt-3.5 max-w-xl mx-auto text-sm md:text-base text-[#5d6971]">
@@ -95,7 +95,7 @@ export default function Contact() {
           <ScrollReveal className="space-y-8">
             <div>
               <SectionLabel>Let's connect</SectionLabel>
-              <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl">
+              <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#102944] sm:text-4xl">
                 We're Here to Help You Navigate Forward
               </h2>
               <p className="mt-4 text-sm leading-7 text-[#5d6971]">
@@ -108,7 +108,7 @@ export default function Contact() {
               <a
                 href="tel:+18084003068"
                 data-testid="link-contact-phone"
-                className="flex items-center gap-3 text-sm font-medium text-[#011330] transition-colors hover:text-[#BA780E]"
+                className="flex items-center gap-3 text-sm font-medium text-[#102944] transition-colors hover:text-[#BA780E]"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8dfd0] text-[#BA780E]">
                   <Phone size={16} />
@@ -118,7 +118,7 @@ export default function Contact() {
               <a
                 href="mailto:info@inclinedcareers.in"
                 data-testid="link-contact-email"
-                className="flex items-center gap-3 text-sm font-medium text-[#011330] transition-colors hover:text-[#BA780E]"
+                className="flex items-center gap-3 text-sm font-medium text-[#102944] transition-colors hover:text-[#BA780E]"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8dfd0] text-[#BA780E]">
                   <Mail size={16} />
@@ -139,7 +139,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[#ded6c7] bg-[#011330] p-6 text-[#f8f4ec] shadow-xl">
+            <div className="rounded-2xl border border-[#ded6c7] bg-[#102944] p-6 text-[#f8f4ec] shadow-xl">
               <p className="eyebrow text-[#BA780E]">Response Time</p>
               <p className="serif text-xl font-semibold mt-1">Within 24 Business Hours</p>
               <p className="text-xs text-[#b9c1c6] mt-2 leading-relaxed">
@@ -167,7 +167,7 @@ export default function Contact() {
                       data-testid={`button-audience-${item.toLowerCase()}`}
                       className={`rounded-xl border px-4 py-3 text-center text-sm font-bold transition-all ${
                         audience === item
-                          ? "border-[#011330] bg-[#011330] text-[#f8f4ec] shadow-md"
+                          ? "border-[#102944] bg-[#102944] text-[#f8f4ec] shadow-md"
                           : "border-[#c6bdad] bg-transparent text-[#5d6971] hover:border-[#BA780E]"
                       }`}
                     >
@@ -233,7 +233,7 @@ export default function Contact() {
                   value={form.message}
                   onChange={(event) => update("message")(event.target.value)}
                   data-testid="input-enquiry-message"
-                  className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#011330] outline-none placeholder:text-[#a1a19b] focus:border-[#BA780E]"
+                  className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#102944] outline-none placeholder:text-[#a1a19b] focus:border-[#BA780E]"
                   placeholder="Tell us a little more about what you're looking for"
                 />
               </div>
@@ -245,7 +245,7 @@ export default function Contact() {
                   type="submit"
                   disabled={sendEnquiry.isPending}
                   data-testid="button-submit-enquiry"
-                  className="mt-8 inline-flex items-center gap-3 bg-[#011330] px-7 py-4 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#011330] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="mt-8 inline-flex items-center gap-3 bg-[#102944] px-7 py-4 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#102944] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {sendEnquiry.isPending ? (
                     <>
@@ -266,7 +266,7 @@ export default function Contact() {
       {/* FOOTER STRIP */}
       <section className="bg-[#e8dfd0] border-t border-[#ded6c7]">
         <div className="container-wide flex flex-col gap-4 py-14 sm:flex-row sm:items-center sm:justify-between">
-          <p className="serif text-3xl font-semibold text-[#011330]">
+          <p className="serif text-3xl font-semibold text-[#102944]">
             Connecting You to the Right Path.
           </p>
           <p className="text-xs uppercase tracking-wider text-[#69747b]">

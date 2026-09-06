@@ -17,7 +17,7 @@ export function PageIntro({
         <div className="lg:col-span-8">
           <ScrollReveal>
             <SectionLabel>{kicker}</SectionLabel>
-            <h1 className="serif mt-6 text-3xl font-semibold leading-[1.15] tracking-[-.025em] text-[#011330] sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="serif mt-6 text-3xl font-semibold leading-[1.15] tracking-[-.025em] text-[#102944] sm:text-4xl md:text-5xl lg:text-6xl">
               {title}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#5d6971]">{copy}</p>
@@ -27,7 +27,7 @@ export function PageIntro({
           <ScrollReveal delay={0.15}>
             <div className="rounded-xl border border-[#BA780E]/40 bg-[#fbf9f5] p-6 shadow-md">
               <p className="eyebrow text-[#BA780E]">Executive Guidance</p>
-              <p className="serif text-xl font-semibold text-[#011330] mt-2">
+              <p className="serif text-xl font-semibold text-[#102944] mt-2">
                 Curated Opportunities. Dedicated Support.
               </p>
               <p className="text-xs text-[#69747b] mt-3 leading-relaxed">

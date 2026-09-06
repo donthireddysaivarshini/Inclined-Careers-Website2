@@ -182,7 +182,7 @@ export default function Careers() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#102944]">
               Find your next{" "}
               <em className="font-medium text-[#BA780E]">opportunity.</em>
             </h1>
@@ -221,7 +221,7 @@ export default function Careers() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#ded6c7]">
           <div>
             <SectionLabel>Open Opportunities</SectionLabel>
-            <h2 className="serif mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#011330]">
+            <h2 className="serif mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#102944]">
               Explore Active Positions
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-[#69747b] max-w-xl">
@@ -234,7 +234,7 @@ export default function Careers() {
             type="button"
             onClick={() => handleOpenModal("General Application", "General")}
             data-testid="button-general-application"
-            className="group self-start md:self-auto inline-flex items-center gap-2 rounded-lg border border-[#BA780E] bg-[#f8f4ec] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#011330] shadow-sm transition-all hover:bg-[#011330] hover:text-[#f8f4ec]"
+            className="group self-start md:self-auto inline-flex items-center gap-2 rounded-lg border border-[#BA780E] bg-[#f8f4ec] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#102944] shadow-sm transition-all hover:bg-[#102944] hover:text-[#f8f4ec]"
           >
             <Sparkles size={14} className="text-[#BA780E]" />
             <span>General Application</span>
@@ -248,8 +248,8 @@ export default function Careers() {
             onClick={() => setActiveCategory("All")}
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all ${
               activeCategory === "All"
-                ? "bg-[#011330] text-[#f8f4ec] shadow-sm"
-                : "border border-[#ded6c7] bg-[#f8f4ec] text-[#5d6971] hover:border-[#BA780E] hover:text-[#011330]"
+                ? "bg-[#102944] text-[#f8f4ec] shadow-sm"
+                : "border border-[#ded6c7] bg-[#f8f4ec] text-[#5d6971] hover:border-[#BA780E] hover:text-[#102944]"
             }`}
           >
             All Sectors ({totalRoles})
@@ -261,8 +261,8 @@ export default function Careers() {
               onClick={() => setActiveCategory(group)}
               className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all ${
                 activeCategory === group
-                  ? "bg-[#011330] text-[#f8f4ec] shadow-sm"
-                  : "border border-[#ded6c7] bg-[#f8f4ec] text-[#5d6971] hover:border-[#BA780E] hover:text-[#011330]"
+                  ? "bg-[#102944] text-[#f8f4ec] shadow-sm"
+                  : "border border-[#ded6c7] bg-[#f8f4ec] text-[#5d6971] hover:border-[#BA780E] hover:text-[#102944]"
               }`}
             >
               {group} ({roles.length})
@@ -277,10 +277,10 @@ export default function Careers() {
               {/* Category Header */}
               <div className="flex items-center justify-between border-b border-[#ded6c7]/80 pb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#011330] text-xs font-bold text-[#BA780E]">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#102944] text-xs font-bold text-[#BA780E]">
                     0{catIndex + 1}
                   </div>
-                  <h3 className="serif text-xl sm:text-2xl font-semibold text-[#011330]">
+                  <h3 className="serif text-xl sm:text-2xl font-semibold text-[#102944]">
                     {category}
                   </h3>
                 </div>
@@ -317,7 +317,7 @@ export default function Careers() {
                       </div>
 
                       {/* Job Title */}
-                      <h4 className="serif mt-3 text-lg sm:text-xl font-bold text-[#011330] group-hover:text-[#BA780E] transition-colors">
+                      <h4 className="serif mt-3 text-lg sm:text-xl font-bold text-[#102944] group-hover:text-[#BA780E] transition-colors">
                         {roleTitle}
                       </h4>
 
@@ -351,7 +351,7 @@ export default function Careers() {
                         whileTap={{ scale: 0.97 }}
                         onClick={() => handleOpenModal(roleTitle, category)}
                         data-testid={`button-apply-${roleTitle.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-[#011330] px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] shadow-sm transition-all hover:bg-[#011330] group-hover:shadow-md"
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-[#102944] px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] shadow-sm transition-all hover:bg-[#102944] group-hover:shadow-md"
                       >
                         Apply Now
                         <ArrowRight size={12} className="text-[#BA780E]" />
@@ -365,7 +365,7 @@ export default function Careers() {
         </div>
 
         {/* General Application Callout Banner */}
-        <div className="mt-12 rounded-2xl border border-[#BA780E]/50 bg-gradient-to-br from-[#011330] to-[#011330] p-6 sm:p-8 text-[#f8f4ec] shadow-xl">
+        <div className="mt-12 rounded-2xl border border-[#BA780E]/50 bg-gradient-to-br from-[#102944] to-[#102944] p-6 sm:p-8 text-[#f8f4ec] shadow-xl">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#BA780E] font-semibold">
@@ -385,7 +385,7 @@ export default function Careers() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleOpenModal("General Application", "General")}
-              className="inline-flex shrink-0 items-center gap-2.5 bg-[#BA780E] px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#011330] shadow-md transition-all hover:bg-[#BA780E]"
+              className="inline-flex shrink-0 items-center gap-2.5 bg-[#BA780E] px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#102944] shadow-md transition-all hover:bg-[#BA780E]"
             >
               Submit Your Resume <ArrowRight size={14} />
             </motion.button>
@@ -403,7 +403,7 @@ export default function Careers() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={handleCloseModal}
-              className="fixed inset-0 bg-[#011330]/75 backdrop-blur-sm"
+              className="fixed inset-0 bg-[#102944]/75 backdrop-blur-sm"
               aria-hidden="true"
             />
 
@@ -423,7 +423,7 @@ export default function Careers() {
                 type="button"
                 onClick={handleCloseModal}
                 data-testid="button-close-modal"
-                className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#ded6c7] bg-[#f3eee4] text-[#5d6971] transition-colors hover:border-[#011330] hover:text-[#011330]"
+                className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#ded6c7] bg-[#f3eee4] text-[#5d6971] transition-colors hover:border-[#102944] hover:text-[#102944]"
                 aria-label="Close modal"
               >
                 <X size={18} />
@@ -432,7 +432,7 @@ export default function Careers() {
               {/* Modal Header */}
               <div className="pr-10 border-b border-[#ded6c7] pb-6">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-[#011330] px-3 py-1 text-[.68rem] font-bold uppercase tracking-wider text-[#BA780E]">
+                  <span className="rounded-full bg-[#102944] px-3 py-1 text-[.68rem] font-bold uppercase tracking-wider text-[#BA780E]">
                     Application
                   </span>
                   {selectedCategory && selectedCategory !== "General" && (
@@ -443,7 +443,7 @@ export default function Careers() {
                 </div>
                 <h3
                   id="modal-headline"
-                  className="serif mt-3 text-2xl sm:text-3xl font-semibold text-[#011330]"
+                  className="serif mt-3 text-2xl sm:text-3xl font-semibold text-[#102944]"
                 >
                   {selectedRole === "General Application"
                     ? "General Candidate Application"
@@ -460,7 +460,7 @@ export default function Careers() {
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e8dfd0] text-[#BA780E]">
                     <Check size={32} />
                   </div>
-                  <h4 className="serif text-2xl font-semibold text-[#011330]">
+                  <h4 className="serif text-2xl font-semibold text-[#102944]">
                     Application Submitted Successfully
                   </h4>
                   <p className="max-w-md mx-auto text-sm text-[#5d6971] leading-relaxed">
@@ -469,7 +469,7 @@ export default function Careers() {
                   <button
                     type="button"
                     onClick={handleCloseModal}
-                    className="inline-flex items-center gap-2 bg-[#011330] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] rounded-lg shadow hover:bg-[#011330] transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#102944] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] rounded-lg shadow hover:bg-[#102944] transition-colors"
                   >
                     Close Window
                   </button>
@@ -542,11 +542,11 @@ export default function Careers() {
                       /* Attached Resume Card with clear Remove button */
                       <div className="flex items-center justify-between gap-3 rounded-xl border border-[#BA780E]/60 bg-[#f8f4ec] p-4 shadow-xs">
                         <div className="flex items-center gap-3 min-w-0">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#011330] text-[#BA780E]">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#102944] text-[#BA780E]">
                             <FileText size={18} />
                           </span>
                           <div className="min-w-0">
-                            <p className="truncate text-sm font-bold text-[#011330]">{file.name}</p>
+                            <p className="truncate text-sm font-bold text-[#102944]">{file.name}</p>
                             <p className="text-[.72rem] text-[#79848a]">
                               {(file.size / 1024 / 1024).toFixed(2)} MB · Ready to submit
                             </p>
@@ -558,7 +558,7 @@ export default function Careers() {
                             type="button"
                             onClick={() => fileRef.current?.click()}
                             data-testid="button-change-resume"
-                            className="rounded-lg border border-[#ded6c7] bg-white px-2.5 py-1.5 text-xs font-semibold text-[#5d6971] hover:text-[#011330] hover:border-[#BA780E] transition-colors"
+                            className="rounded-lg border border-[#ded6c7] bg-white px-2.5 py-1.5 text-xs font-semibold text-[#5d6971] hover:text-[#102944] hover:border-[#BA780E] transition-colors"
                           >
                             Change
                           </button>
@@ -586,7 +586,7 @@ export default function Careers() {
                           <FileText size={18} />
                         </span>
                         <span className="min-w-0 flex-1">
-                          <span className="block truncate text-sm font-semibold text-[#011330]">
+                          <span className="block truncate text-sm font-semibold text-[#102944]">
                             Select or attach your resume
                           </span>
                           <span className="mt-0.5 block text-xs text-[#79848a]">
@@ -627,7 +627,7 @@ export default function Careers() {
                       onChange={(event) => update("message")(event.target.value)}
                       placeholder="Brief note regarding your availability, visa timelines, or preferences..."
                       data-testid="input-modal-application-message"
-                      className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-2 text-sm text-[#011330] outline-none placeholder:text-[#a1a19b] focus:border-[#BA780E]"
+                      className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-2 text-sm text-[#102944] outline-none placeholder:text-[#a1a19b] focus:border-[#BA780E]"
                     />
                   </div>
 
@@ -640,7 +640,7 @@ export default function Careers() {
                     <button
                       type="button"
                       onClick={handleCloseModal}
-                      className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#5d6971] hover:text-[#011330] transition-colors"
+                      className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#5d6971] hover:text-[#102944] transition-colors"
                     >
                       Cancel
                     </button>
@@ -648,7 +648,7 @@ export default function Careers() {
                       type="submit"
                       disabled={submitApplication.isPending}
                       data-testid="button-modal-submit"
-                      className="inline-flex items-center gap-2.5 rounded-lg bg-[#011330] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] shadow-md transition-all hover:bg-[#011330] disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-2.5 rounded-lg bg-[#102944] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#f8f4ec] shadow-md transition-all hover:bg-[#102944] disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {submitApplication.isPending ? (
                         <>

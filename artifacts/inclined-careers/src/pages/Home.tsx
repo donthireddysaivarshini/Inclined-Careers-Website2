@@ -49,9 +49,9 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       {isMobile ? (
         /* MOBILE HERO: Clean, simple, fast (no canvas animation), with 2-column pillars in solid cream bar */
-        <section className="relative overflow-hidden bg-[#011330] text-[#f8f4ec] flex flex-col min-h-screen pt-20 justify-between">
+        <section className="relative overflow-hidden bg-[#102944] text-[#f8f4ec] flex flex-col min-h-screen pt-20 justify-between">
           <div className="flex-1 flex flex-col justify-center px-5 py-10 max-w-xl mx-auto w-full">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#BA780E]/40 bg-[#011330]/80 px-3 py-1 text-[.64rem] uppercase tracking-[.14em] text-[#BA780E] backdrop-blur-md mb-4 w-fit">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#BA780E]/40 bg-[#102944]/80 px-3 py-1 text-[.64rem] uppercase tracking-[.14em] text-[#BA780E] backdrop-blur-md mb-4 w-fit">
               <Sparkles size={12} />
               <span>Career &amp; Recruitment Support</span>
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
               <Link
                 href="/careers"
                 data-testid="link-home-careers-mobile"
-                className="inline-flex items-center justify-center gap-2 bg-[#BA780E] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#011330] shadow-md"
+                className="inline-flex items-center justify-center gap-2 bg-[#BA780E] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#102944] shadow-md"
               >
                 Explore opportunities
                 <ArrowRight size={14} />
@@ -102,7 +102,7 @@ export default function Home() {
                   className="flex items-center gap-2.5 rounded-lg border border-gray-200/90 bg-white p-3 shadow-xs"
                 >
                   <span className="text-[#BA780E] font-medium text-xs sm:text-sm">{item.num}</span>
-                  <span className="text-[#011330] font-semibold tracking-wider text-xs uppercase leading-snug">
+                  <span className="text-[#102944] font-semibold tracking-wider text-xs uppercase leading-snug">
                     {item.label}
                   </span>
                 </div>
@@ -112,11 +112,11 @@ export default function Home() {
         </section>
       ) : (
         /* DESKTOP HERO: Full screen flex-col wrapper with flex-1 relative canvas and bottom solid cream bar */
-        <section className="relative overflow-hidden bg-[#011330] flex flex-col min-h-screen lg:h-screen pt-16 lg:pt-20 justify-between">
+        <section className="relative overflow-hidden bg-[#102944] flex flex-col min-h-screen lg:h-screen pt-16 lg:pt-20 justify-between">
           {/* Top Part: OrbitalHeroSection taking up remaining space using flex-1 relative */}
           <div className="flex-1 relative flex flex-col justify-center overflow-hidden">
             <OrbitalHeroSection
-              backgroundColor="#011330"
+              backgroundColor="#102944"
               sunColor="#BA780E"
               planets={INCLINED_SYSTEM}
               focus={[0.74, 0.44]}
@@ -132,7 +132,7 @@ export default function Home() {
               <div className="container-wide relative z-10 py-8 flex flex-col justify-center">
                 <div className="max-w-2xl">
                   <ScrollReveal>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#BA780E]/40 bg-[#011330]/80 px-3.5 py-1 text-[.66rem] uppercase tracking-[.16em] text-[#BA780E] backdrop-blur-md shadow-sm mb-4">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#BA780E]/40 bg-[#102944]/80 px-3.5 py-1 text-[.66rem] uppercase tracking-[.16em] text-[#BA780E] backdrop-blur-md shadow-sm mb-4">
                       <Sparkles size={12} />
                       <span>Inclined Careers · Career &amp; Recruitment Support</span>
                     </div>
@@ -156,7 +156,7 @@ export default function Home() {
                         <Link
                           href="/careers"
                           data-testid="link-home-careers"
-                          className="group inline-flex items-center gap-2.5 bg-[#BA780E] px-6 py-3.5 text-xs font-bold uppercase tracking-[.14em] text-[#011330] shadow-md transition-all hover:bg-[#BA780E] hover:shadow-xl"
+                          className="group inline-flex items-center gap-2.5 bg-[#BA780E] px-6 py-3.5 text-xs font-bold uppercase tracking-[.14em] text-[#102944] shadow-md transition-all hover:bg-[#BA780E] hover:shadow-xl"
                         >
                           Explore opportunities
                           <ArrowRight
@@ -196,7 +196,7 @@ export default function Home() {
                   }`}
                 >
                   <span className="text-[#BA780E] font-medium text-sm lg:text-base">{item.num}</span>
-                  <span className="text-[#011330] font-semibold tracking-wider text-xs lg:text-sm uppercase">
+                  <span className="text-[#102944] font-semibold tracking-wider text-xs lg:text-sm uppercase">
                     {item.label}
                   </span>
                 </div>
@@ -227,8 +227,8 @@ export default function Home() {
                 alt="Contemporary executive workplace and talent advisory office"
                 className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-[#011330]/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-lg bg-[#011330]/90 backdrop-blur-md border border-[#BA780E]/30 text-[#f8f4ec]">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102944]/80 via-[#102944]/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-lg bg-[#102944]/90 backdrop-blur-md border border-[#BA780E]/30 text-[#f8f4ec]">
                 <p className="text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                   Our Commitment
                 </p>
@@ -241,7 +241,7 @@ export default function Home() {
 
           <div className="lg:col-span-7">
             <ScrollReveal delay={0.1}>
-              <h2 className="serif text-3xl font-semibold leading-[1.15] tracking-[-.025em] text-[#011330] sm:text-4xl md:text-5xl">
+              <h2 className="serif text-3xl font-semibold leading-[1.15] tracking-[-.025em] text-[#102944] sm:text-4xl md:text-5xl">
                 Built Around People. Focused on the Right Opportunities.
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-[#5d6971]">
@@ -256,7 +256,7 @@ export default function Home() {
                   className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For candidates</p>
-                  <h3 className="serif mt-2 text-2xl font-semibold text-[#011330]">
+                  <h3 className="serif mt-2 text-2xl font-semibold text-[#102944]">
                     Looking for Your Next Opportunity?
                   </h3>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
@@ -276,7 +276,7 @@ export default function Home() {
                   <Link
                     href="/careers"
                     data-testid="link-home-candidate-path"
-                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#102944] transition-colors hover:text-[#BA780E]"
                   >
                     Explore opportunities{" "}
                     <ArrowRight
@@ -292,7 +292,7 @@ export default function Home() {
                   className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For employers</p>
-                  <h3 className="serif mt-2 text-2xl font-semibold text-[#011330]">
+                  <h3 className="serif mt-2 text-2xl font-semibold text-[#102944]">
                     Looking for the Right Talent?
                   </h3>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
@@ -312,7 +312,7 @@ export default function Home() {
                   <Link
                     href="/services"
                     data-testid="link-home-employer-path"
-                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#102944] transition-colors hover:text-[#BA780E]"
                   >
                     Hire the right talent{" "}
                     <ArrowRight
@@ -333,14 +333,14 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <SectionLabel>Our services</SectionLabel>
-              <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+              <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#102944] sm:text-4xl md:text-5xl">
                 Recruitment Support That Moves Careers Forward
               </h2>
             </div>
             <Link
               href="/services"
               data-testid="link-home-services"
-              className="group inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-[#102944] transition-colors hover:text-[#BA780E]"
             >
               Explore all services{" "}
               <ArrowRight
@@ -368,7 +368,7 @@ export default function Home() {
             >
               <span className="serif text-3xl text-[#BA780E] font-semibold">0{index + 1}</span>
               <div>
-                <h3 className="font-bold text-[#011330] text-lg">{title}</h3>
+                <h3 className="font-bold text-[#102944] text-lg">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[#69747b]">{copy}</p>
               </div>
             </motion.div>
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <SectionLabel>A more human approach to recruitment</SectionLabel>
-                <h2 className="serif mt-3 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+                <h2 className="serif mt-3 max-w-2xl text-3xl font-semibold leading-tight text-[#102944] sm:text-4xl md:text-5xl">
                   How we work
                 </h2>
               </div>
@@ -420,7 +420,7 @@ export default function Home() {
                       Step {index + 1}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#011330]">{title}</h3>
+                  <h3 className="text-lg font-bold text-[#102944]">{title}</h3>
                   <p className="mt-2 text-xs sm:text-sm leading-6 text-[#69747b]">{copy}</p>
                 </div>
               </motion.div>
@@ -430,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* 8. NO COMMISSION FROM YOUR JOB */}
-      <section className="section-slide bg-[#011330] text-[#f8f4ec] py-20 md:py-28 relative overflow-hidden">
+      <section className="section-slide bg-[#102944] text-[#f8f4ec] py-20 md:py-28 relative overflow-hidden">
         <div className="container-wide grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <ScrollReveal>
             <SectionLabel light>No commission from your job</SectionLabel>
@@ -461,7 +461,7 @@ export default function Home() {
               <Link
                 href="/contact"
                 data-testid="link-home-trust-contact"
-                className="inline-flex items-center gap-3 bg-[#BA780E] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#011330] transition-all hover:bg-[#BA780E] shadow-lg"
+                className="inline-flex items-center gap-3 bg-[#BA780E] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#102944] transition-all hover:bg-[#BA780E] shadow-lg"
               >
                 Talk to our team <ArrowRight size={16} />
               </Link>
@@ -479,10 +479,10 @@ export default function Home() {
                 alt="Executive consultant in sunlit corporate office"
                 className="h-[420px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102944]/80 via-transparent to-transparent" />
             </motion.div>
 
-            <div className="absolute -bottom-6 -right-4 sm:-bottom-6 sm:-right-6 rounded-xl border border-[#BA780E]/40 bg-[#011330]/95 p-6 text-[#f8f4ec] shadow-2xl backdrop-blur-md max-w-xs">
+            <div className="absolute -bottom-6 -right-4 sm:-bottom-6 sm:-right-6 rounded-xl border border-[#BA780E]/40 bg-[#102944]/95 p-6 text-[#f8f4ec] shadow-2xl backdrop-blur-md max-w-xs">
               <div className="flex items-center gap-3">
                 <CheckCircle2 size={26} className="text-[#BA780E] shrink-0" />
                 <div>
@@ -504,7 +504,7 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-12 items-center">
           <ScrollReveal className="lg:col-span-6">
             <SectionLabel>Launch special</SectionLabel>
-            <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+            <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#102944] sm:text-4xl md:text-5xl">
               We're celebrating our launch with special pricing!
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#69747b]">
@@ -521,7 +521,7 @@ export default function Home() {
             >
               <div className="flex items-baseline gap-4">
                 <span className="serif text-3xl text-[#98a0a4] line-through">$299</span>
-                <span className="serif text-6xl md:text-7xl font-semibold leading-none text-[#011330]">
+                <span className="serif text-6xl md:text-7xl font-semibold leading-none text-[#102944]">
                   $199
                 </span>
                 <span className="inline-flex items-center rounded-full bg-[#e8dfd0] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#BA780E]">
@@ -534,7 +534,7 @@ export default function Home() {
               <Link
                 href="/contact"
                 data-testid="link-home-launch"
-                className="group mt-6 inline-flex w-fit items-center gap-3 border-b-2 border-[#BA780E] pb-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+                className="group mt-6 inline-flex w-fit items-center gap-3 border-b-2 border-[#BA780E] pb-2 text-sm font-bold text-[#102944] transition-colors hover:text-[#BA780E]"
               >
                 Get started with special launch rate{" "}
                 <ArrowRight
@@ -552,7 +552,7 @@ export default function Home() {
         <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <ScrollReveal>
             <SectionLabel>Take the next step</SectionLabel>
-            <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+            <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#102944] sm:text-4xl md:text-5xl">
               Your Next Opportunity Could Be the Right One.
             </h2>
             <p className="mt-4 max-w-xl leading-7 text-[#5d6971]">
@@ -565,7 +565,7 @@ export default function Home() {
               <Link
                 href="/careers"
                 data-testid="link-home-final-careers"
-                className="inline-flex items-center gap-3 bg-[#011330] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.12em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#011330] hover:shadow-xl"
+                className="inline-flex items-center gap-3 bg-[#102944] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.12em] text-[#f8f4ec] shadow-md transition-all hover:bg-[#102944] hover:shadow-xl"
               >
                 Explore opportunities <ArrowRight size={16} className="text-[#BA780E]" />
               </Link>
@@ -574,7 +574,7 @@ export default function Home() {
               <Link
                 href="/services"
                 data-testid="link-home-final-employers"
-                className="inline-flex items-center gap-3 border border-[#011330] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.12em] text-[#011330] transition-all hover:bg-[#011330]/5"
+                className="inline-flex items-center gap-3 border border-[#102944] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.12em] text-[#102944] transition-all hover:bg-[#102944]/5"
               >
                 Hire the right talent <ArrowRight size={16} />
               </Link>
