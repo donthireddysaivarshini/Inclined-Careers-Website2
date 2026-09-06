@@ -37,10 +37,10 @@ export function Header() {
         className={`pointer-events-auto mx-auto max-w-6xl rounded-full transition-all duration-300 ease-in-out flex items-center justify-between px-4 sm:px-6 md:px-8 ${
           isTransparent
             ? "mt-3 sm:mt-4 h-[66px] bg-transparent border border-white/10 shadow-none"
-            : "mt-2.5 sm:mt-3 h-[60px] bg-[#102944]/85 backdrop-blur-md border border-white/15 shadow-xl shadow-black/30"
+            : "mt-2.5 sm:mt-3 h-[60px] bg-[#011330]/85 backdrop-blur-md border border-white/15 shadow-xl shadow-black/30"
         }`}
       >
-        {/* Brand Logo - Light variant matching exact #102944, #BA780E, #FFFFFF */}
+        {/* Brand Logo - Light variant matching exact #011330, #BA780E, #FFFFFF */}
         <Logo light />
 
         {/* Desktop Navigation Links */}
@@ -78,15 +78,15 @@ export function Header() {
             data-testid="link-header-enquiry"
             className={`group inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2 text-[.72rem] font-bold uppercase tracking-[.14em] transition-all ${
               isTransparent
-                ? "border border-[#BA780E]/70 bg-[#BA780E]/15 text-white hover:bg-[#BA780E] hover:text-[#102944] shadow-sm"
-                : "bg-[#BA780E] text-[#102944] hover:bg-[#BA780E] shadow-md active:scale-95"
+                ? "border border-[#BA780E]/70 bg-[#BA780E]/15 text-white hover:bg-[#BA780E] hover:text-[#011330] shadow-sm"
+                : "bg-[#BA780E] text-[#011330] hover:bg-[#BA780E] shadow-md active:scale-95"
             }`}
           >
             <span>Talk to our team</span>
             <ArrowRight
               size={13}
               className={`transition-transform duration-200 group-hover:translate-x-1 ${
-                isTransparent ? "text-[#BA780E] group-hover:text-[#102944]" : "text-[#102944]"
+                isTransparent ? "text-[#BA780E] group-hover:text-[#011330]" : "text-[#011330]"
               }`}
             />
           </Link>
@@ -113,7 +113,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-white/15 bg-[#102944]/95 backdrop-blur-xl p-5 shadow-2xl md:hidden"
+            className="pointer-events-auto mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-white/15 bg-[#011330]/95 backdrop-blur-xl p-5 shadow-2xl md:hidden"
           >
             <nav className="flex flex-col space-y-1" aria-label="Mobile navigation">
               {navItems.map((item) => {
@@ -140,7 +140,7 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#BA780E] py-3 text-xs font-bold uppercase tracking-[.14em] text-[#102944] shadow-md hover:bg-[#BA780E] transition-colors"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#BA780E] py-3 text-xs font-bold uppercase tracking-[.14em] text-[#011330] shadow-md hover:bg-[#BA780E] transition-colors"
                 >
                   <span>Talk to our team</span>
                   <ArrowRight size={14} />

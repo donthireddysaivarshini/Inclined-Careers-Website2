@@ -32,7 +32,7 @@ export function InfiniteMarquee() {
       >
         {list.map((item, idx) => (
           <div key={idx} className="flex items-center gap-10">
-            <span className="text-xs font-bold uppercase tracking-[.18em] text-[#102944]">
+            <span className="text-xs font-bold uppercase tracking-[.18em] text-[#011330]">
               {item}
             </span>
             <span className="text-[#BA780E] text-xs">✦</span>

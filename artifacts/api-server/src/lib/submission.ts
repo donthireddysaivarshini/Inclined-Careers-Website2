@@ -88,7 +88,7 @@ export async function sendSubmissionEmail(input: {
     )
     .join("");
   const messageHtml = input.message
-    ? `<h3 style="color:#102944;margin:24px 0 8px">Message</h3><p style="white-space:pre-wrap;color:#344054;line-height:1.6">${escapeHtml(input.message)}</p>`
+    ? `<h3 style="color:#011330;margin:24px 0 8px">Message</h3><p style="white-space:pre-wrap;color:#344054;line-height:1.6">${escapeHtml(input.message)}</p>`
     : "";
 
   const logoHeaderHtml = logo
@@ -98,13 +98,13 @@ export async function sendSubmissionEmail(input: {
             <img src="cid:inclined_logo" alt="Inclined Careers" style="width:48px;height:48px;border-radius:50%;display:block;" />
           </td>
           <td style="padding-left:14px;vertical-align:middle;text-align:left;">
-            <div style="font-size:20px;font-weight:700;color:#102944;font-family:Georgia,serif;letter-spacing:0.5px">Inclined Careers</div>
+            <div style="font-size:20px;font-weight:700;color:#011330;font-family:Georgia,serif;letter-spacing:0.5px">Inclined Careers</div>
             <div style="font-size:12px;color:#667085;margin-top:2px">${escapeHtml(input.intro)}</div>
           </td>
         </tr>
       </table>`
     : `<div>
-        <div style="font-size:20px;font-weight:700;color:#102944">Inclined Careers</div>
+        <div style="font-size:20px;font-weight:700;color:#011330">Inclined Careers</div>
         <div style="font-size:13px;color:#667085;margin-top:4px">${escapeHtml(input.intro)}</div>
       </div>`;
 
@@ -182,20 +182,20 @@ export async function sendConfirmationEmail(input: {
       </div>`;
 
   const html = `
-    <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;color:#102944;background-color:#ffffff;border:1px solid #ded6c7;border-radius:8px;overflow:hidden">
-      <div style="background-color:#102944;padding:24px 28px;">
+    <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;color:#011330;background-color:#ffffff;border:1px solid #ded6c7;border-radius:8px;overflow:hidden">
+      <div style="background-color:#011330;padding:24px 28px;">
         ${headerLogoHtml}
       </div>
       <div style="padding:36px 28px">
-        <h2 style="color:#102944;font-size:20px;margin-top:0;font-family:Georgia,serif">${headline}</h2>
+        <h2 style="color:#011330;font-size:20px;margin-top:0;font-family:Georgia,serif">${headline}</h2>
         <p style="font-size:15px;color:#5d6971;line-height:1.6">Dear ${escapeHtml(input.recipientName)},</p>
         <p style="font-size:15px;color:#5d6971;line-height:1.6">${bodyText}</p>
         <div style="background-color:#fbf9f5;border-left:3px solid #BA780E;padding:16px 20px;margin:24px 0;border-radius:4px">
-          <p style="margin:0;font-size:13px;font-weight:bold;color:#102944;text-transform:uppercase;letter-spacing:1px">The Inclined Promise</p>
+          <p style="margin:0;font-size:13px;font-weight:bold;color:#011330;text-transform:uppercase;letter-spacing:1px">The Inclined Promise</p>
           <p style="margin:6px 0 0;font-size:13px;color:#69747b;line-height:1.5">Direct 1:1 human guidance · 0% commission from your salary · Transparent support throughout your career journey.</p>
         </div>
-        <p style="font-size:14px;color:#5d6971;line-height:1.6">If you have any urgent questions, feel free to reply directly to this email or reach us at <a href="mailto:info@inclinedcareers.in" style="color:#102944;font-weight:600;text-decoration:none">info@inclinedcareers.in</a> or <a href="tel:+18084003068" style="color:#102944;font-weight:600;text-decoration:none">+1808-400-3068</a>.</p>
-        <p style="font-size:15px;color:#102944;margin-top:28px">Warm regards,<br><strong>The Inclined Careers Team</strong></p>
+        <p style="font-size:14px;color:#5d6971;line-height:1.6">If you have any urgent questions, feel free to reply directly to this email or reach us at <a href="mailto:info@inclinedcareers.in" style="color:#011330;font-weight:600;text-decoration:none">info@inclinedcareers.in</a> or <a href="tel:+18084003068" style="color:#011330;font-weight:600;text-decoration:none">+1808-400-3068</a>.</p>
+        <p style="font-size:15px;color:#011330;margin-top:28px">Warm regards,<br><strong>The Inclined Careers Team</strong></p>
       </div>
       <div style="background-color:#f8f4ec;padding:18px 28px;text-align:center;border-top:1px solid #ded6c7">
         <p style="font-size:12px;color:#8a949b;margin:0">© 2026 Inclined Careers. All rights reserved. · Hyderabad, India</p>

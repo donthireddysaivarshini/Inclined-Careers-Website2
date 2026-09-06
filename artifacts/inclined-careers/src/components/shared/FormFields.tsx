@@ -63,7 +63,7 @@ export function Field({
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
         data-testid={`input-${name}`}
-        className="w-full border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#102944] outline-none transition-colors placeholder:text-[#a1a19b] focus:border-[#BA780E]"
+        className="w-full border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#011330] outline-none transition-colors placeholder:text-[#a1a19b] focus:border-[#BA780E]"
       />
     </label>
   );

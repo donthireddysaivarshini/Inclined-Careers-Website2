@@ -14,7 +14,7 @@ export function Logo({ light = false }: { light?: boolean }) {
       />
       <span
         className={`text-[.82rem] font-bold tracking-[.18em] leading-tight transition-colors ${
-          light ? "text-[#FFFFFF] group-hover:text-[#BA780E]" : "text-[#102944] group-hover:text-[#BA780E]"
+          light ? "text-[#FFFFFF] group-hover:text-[#BA780E]" : "text-[#011330] group-hover:text-[#BA780E]"
         }`}
       >
         INCLINED<br />

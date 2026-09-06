@@ -53,7 +53,7 @@ export function ThankYouModal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#102944]/80 backdrop-blur-md"
+            className="fixed inset-0 bg-[#011330]/80 backdrop-blur-md"
           />
 
           {/* Modal Container */}
@@ -72,13 +72,13 @@ export function ThankYouModal({
               type="button"
               onClick={onClose}
               aria-label="Close dialog"
-              className="absolute right-4 top-4 rounded-full p-2 text-[#6c7781] hover:bg-[#ede6d8] hover:text-[#102944] transition-colors"
+              className="absolute right-4 top-4 rounded-full p-2 text-[#6c7781] hover:bg-[#ede6d8] hover:text-[#011330] transition-colors"
             >
               <X size={20} />
             </button>
 
-            {/* Animated Success Badge matching Logo #102944 and #BA780E */}
-            <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#102944] text-[#BA780E] shadow-lg ring-4 ring-[#BA780E]/30">
+            {/* Animated Success Badge matching Logo #011330 and #BA780E */}
+            <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#011330] text-[#BA780E] shadow-lg ring-4 ring-[#BA780E]/30">
               <motion.div
                 initial={{ scale: 0, rotate: -45 }}
                 animate={{ scale: 1, rotate: 0 }}
@@ -91,7 +91,7 @@ export function ThankYouModal({
             {/* Title */}
             <h3
               id="thank-you-title"
-              className="serif text-2xl sm:text-3xl font-bold tracking-tight text-[#102944]"
+              className="serif text-2xl sm:text-3xl font-bold tracking-tight text-[#011330]"
             >
               {title}
             </h3>
@@ -111,7 +111,7 @@ export function ThankYouModal({
             <div className="mt-5 rounded-xl border border-[#ded6c7] bg-white/70 p-3.5 text-left flex items-start gap-3">
               <ShieldCheck size={18} className="text-[#BA780E] shrink-0 mt-0.5" />
               <div className="text-xs leading-relaxed text-[#5d6971]">
-                <strong className="text-[#102944] font-semibold">The Inclined Promise:</strong> Direct 1:1 human guidance · 0% commission from your salary.
+                <strong className="text-[#011330] font-semibold">The Inclined Promise:</strong> Direct 1:1 human guidance · 0% commission from your salary.
               </div>
             </div>
 
@@ -119,7 +119,7 @@ export function ThankYouModal({
             <button
               type="button"
               onClick={onClose}
-              className="mt-6 w-full rounded-full bg-[#102944] py-3.5 px-6 text-sm font-bold uppercase tracking-[.14em] text-white shadow-md transition-all hover:bg-[#102944] active:scale-[0.98]"
+              className="mt-6 w-full rounded-full bg-[#011330] py-3.5 px-6 text-sm font-bold uppercase tracking-[.14em] text-white shadow-md transition-all hover:bg-[#011330] active:scale-[0.98]"
             >
               Continue Browsing
             </button>

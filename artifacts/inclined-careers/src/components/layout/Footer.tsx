@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-[#102944] text-white">
+    <footer className="bg-[#011330] text-white">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-[1.3fr_.7fr_.9fr] md:py-20">
         <div>
           <Logo light />
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-[#102944]">
+      <div className="border-t border-[#011330]">
         <div className="container-wide flex flex-col gap-2 py-5 text-[.68rem] uppercase tracking-[.14em] text-[#98a9b5] sm:flex-row sm:justify-between">
           <span>© 2026 Inclined Careers. All rights reserved.</span>
           <span>Connecting You to the Right Path.</span>
