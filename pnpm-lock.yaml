@@ -154,6 +154,9 @@ importers:
       '@replit/connectors-sdk':
         specifier: ^0.4.1
         version: 0.4.1
+      busboy:
+        specifier: ^1.6.0
+        version: 1.6.0
       nodemailer:
         specifier: ^6.9.16
         version: 6.10.1
@@ -348,6 +351,9 @@ importers:
       '@workspace/api-client-react':
         specifier: workspace:*
         version: link:../../lib/api-client-react
+      busboy:
+        specifier: ^1.6.0
+        version: 1.6.0
       class-variance-authority:
         specifier: 'catalog:'
         version: 0.7.1
