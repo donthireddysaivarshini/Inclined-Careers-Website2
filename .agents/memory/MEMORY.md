@@ -1,0 +1,1 @@
+- [Stock imagery fallback](stock-imagery-fallback.md) — when public image search is unavailable, use downloaded, stable stock assets instead of adding runtime hotlinks.
