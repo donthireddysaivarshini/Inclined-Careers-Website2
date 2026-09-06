@@ -1,14 +1,28 @@
+import fs from "node:fs";
+import path from "node:path";
 import app from "./app";
 import { logger } from "./lib/logger";
 
-const rawPort = process.env["PORT"];
-
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
+// Automatically load .env if present
+const envCandidates = [
+  path.resolve(process.cwd(), ".env"),
+  path.resolve(import.meta.dirname, "..", ".env"),
+  path.resolve(import.meta.dirname, "..", "..", "..", ".env"),
+];
+for (const p of envCandidates) {
+  if (fs.existsSync(p)) {
+    try {
+      if (typeof process.loadEnvFile === "function") {
+        process.loadEnvFile(p);
+      }
+      break;
+    } catch (e) {
+      logger.warn({ err: e }, `Could not load env file from ${p}`);
+    }
+  }
 }
 
+const rawPort = process.env["PORT"] || "3000";
 const port = Number(rawPort);
 
 if (Number.isNaN(port) || port <= 0) {

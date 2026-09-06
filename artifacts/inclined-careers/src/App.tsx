@@ -1,211 +1,44 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ArrowDownRight, ArrowRight, Check, FileText, Instagram, Linkedin, Loader2, Mail, Menu, Phone, X } from "lucide-react";
-import { Link, Route, Router as WouterRouter, Switch, useLocation } from "wouter";
-import { useSendEnquiry, useSubmitApplication } from "@workspace/api-client-react";
+import { Route, Router as WouterRouter, Switch } from "wouter";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Shell } from "@/components/layout/Shell";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Services from "@/pages/Services";
+import Careers from "@/pages/Careers";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
-type Audience = "Candidate" | "Employer";
-
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact Us" },
-];
-
-const imageUrl = (file: string) => `${import.meta.env.BASE_URL}images/${file}`;
-
-function Meta({ title, description }: { title: string; description: string }) {
-  useEffect(() => {
-    document.title = title;
-    const setMeta = (name: string, content: string) => {
-      let element = document.querySelector(`meta[name="${name}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("name", name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
-    };
-    setMeta("description", description);
-    setMeta("og:title", title);
-    setMeta("og:description", description);
-    setMeta("og:type", "website");
-    const canonical = document.querySelector('link[rel="canonical"]') ?? document.createElement("link");
-    canonical.setAttribute("rel", "canonical");
-    canonical.setAttribute("href", window.location.href);
-    document.head.appendChild(canonical);
-  }, [title, description]);
-  return null;
-}
-
-function Logo({ light = false }: { light?: boolean }) {
-  return (
-    <Link href="/" className="group inline-flex items-center" data-testid="link-logo">
-      <span className={`text-[.83rem] font-bold tracking-[.2em] ${light ? "text-[#f8f4ec]" : "text-[#102944]"}`}>
-        INCLINED<br /><span className="font-medium tracking-[.28em]">CAREERS</span>
-      </span>
-    </Link>
-  );
-}
-
-function Header() {
-  const [open, setOpen] = useState(false);
-  const [location] = useLocation();
-  return (
-    <header className="relative z-30 border-b border-[hsl(var(--border)/.65)] bg-[hsl(var(--background)/.94)] backdrop-blur-md">
-      <div className="container-wide flex h-[76px] items-center justify-between">
-        <Logo />
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href} data-testid={`link-nav-${item.label.toLowerCase().replaceAll(" ", "-")}`} className={`relative py-2 text-[.72rem] font-bold uppercase tracking-[.13em] transition-colors ${location === item.href ? "text-[#102944]" : "text-[#6c7781] hover:text-[#102944]"}`}>
-              {item.label}
-              {location === item.href && <span className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-[#c9a45f]" />}
-            </Link>
-          ))}
-        </nav>
-        <Link href="/contact" data-testid="link-header-enquiry" className="hidden items-center gap-2 text-[.72rem] font-bold uppercase tracking-[.13em] text-[#102944] md:flex">
-          Talk to our team <ArrowRight size={15} className="text-[#c9a45f]" />
-        </Link>
-        <button type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu" className="rounded-md p-2 text-[#102944] md:hidden">
-          {open ? <X size={23} /> : <Menu size={23} />}
-        </button>
-      </div>
-      {open && (
-        <nav className="border-t border-[hsl(var(--border)/.7)] bg-[#f8f4ec] px-6 py-5 md:hidden" aria-label="Mobile navigation">
-          <div className="container-wide flex flex-col gap-1">
-            {nav.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setOpen(false)} data-testid={`link-mobile-${item.label.toLowerCase().replaceAll(" ", "-")}`} className={`flex items-center justify-between border-b border-[#ded6c7] py-4 text-sm font-bold uppercase tracking-[.12em] ${location === item.href ? "text-[#102944]" : "text-[#6c7781]"}`}>
-                {item.label}<ArrowRight size={16} className="text-[#c9a45f]" />
-              </Link>
-            ))}
-          </div>
-        </nav>
-      )}
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-[#102944] text-[#f8f4ec]">
-      <div className="container-wide grid gap-12 py-16 md:grid-cols-[1.3fr_.7fr_.9fr] md:py-20">
-        <div><Logo light /><p className="mt-8 max-w-xs text-sm leading-7 text-[#b9c1c6]">Connecting You to the Right Path.</p><p className="mt-6 text-xs uppercase tracking-[.12em] text-[#d9b66d]">No Commission From Your Job</p></div>
-        <div><p className="eyebrow text-[#d9b66d]">Explore</p><div className="mt-5 flex flex-col items-start gap-3 text-sm text-[#d7dcdf]">{nav.map((item) => <Link key={item.href} href={item.href} className="transition-colors hover:text-[#d9b66d]">{item.label}</Link>)}</div></div>
-        <div><p className="eyebrow text-[#d9b66d]">Contact</p><div className="mt-5 flex flex-col items-start gap-3 text-sm text-[#d7dcdf]"><a href="tel:+18084003068" data-testid="link-footer-phone" className="inline-flex items-center gap-2 hover:text-[#d9b66d]"><Phone size={14} /> +1808-400-3068</a><a href="mailto:info@inclinedcareers.in" data-testid="link-footer-email" className="inline-flex items-center gap-2 hover:text-[#d9b66d]"><Mail size={14} /> info@inclinedcareers.in</a><span>Hyderabad, India</span><div className="mt-2 flex gap-4"><a href="https://www.instagram.com/inclinedcareers?igsi=eWZvenZ6bHFtaXA5" target="_blank" rel="noreferrer" aria-label="Instagram" data-testid="link-instagram" className="hover:text-[#d9b66d]"><Instagram size={18} /></a><a href="#" aria-label="LinkedIn placeholder" data-testid="link-linkedin" className="hover:text-[#d9b66d]"><Linkedin size={18} /></a></div></div></div>
-      </div>
-      <div className="border-t border-[#2b435b]"><div className="container-wide flex flex-col gap-2 py-5 text-[.68rem] uppercase tracking-[.14em] text-[#98a9b5] sm:flex-row sm:justify-between"><span>© 2026 Inclined Careers. All rights reserved.</span><span>Connecting You to the Right Path.</span></div></div>
-    </footer>
-  );
-}
-
-function Shell({ children }: { children: ReactNode }) {
-  return <div className="site-noise min-h-[100dvh] overflow-x-hidden"><Header />{children}<Footer /></div>;
-}
-
-function SectionLabel({ children }: { children: ReactNode }) {
-  return <p className="eyebrow flex items-center gap-3 text-[#9a783a]"><span className="h-px w-8 bg-[#c9a45f]" />{children}</p>;
-}
-
-function PageIntro({ kicker, title, copy }: { kicker: string; title: ReactNode; copy: string }) {
-  return <section className="paper-grid border-b border-[#ded6c7] bg-[#f3eee4]"><div className="container-wide grid gap-10 py-16 md:grid-cols-[.75fr_1.25fr] md:py-24"><div className="reveal"><SectionLabel>{kicker}</SectionLabel></div><div className="reveal reveal-delay-1"><h1 className="serif max-w-4xl text-5xl font-semibold leading-[.93] tracking-[-.03em] text-[#102944] sm:text-6xl md:text-8xl">{title}</h1><p className="mt-7 max-w-xl text-base leading-7 text-[#5d6971]">{copy}</p></div></div></section>;
-}
-
-const industries = [
-  ["IT & Technology", "Technology roles shaped around the right skills and experience."],
-  ["Healthcare", "Connecting people with meaningful healthcare opportunities."],
-  ["Data Center Operations", "Specialized support for critical infrastructure teams."],
-  ["Embedded Systems", "Talent for the systems behind the products people use."],
-  ["Business & Professional", "Thoughtful connections across business and professional roles."],
-];
-
-const services = [
-  ["Talent Acquisition", "Connecting employers with qualified professionals who match their skills, experience, and hiring requirements."],
-  ["Permanent Staffing", "Helping organizations identify and hire the right professionals for long-term, full-time opportunities."],
-  ["Contract Staffing", "Providing qualified talent for contract, temporary, and project-based workforce requirements."],
-  ["Candidate Sourcing & Screening", "Finding potential candidates, reviewing their qualifications, and conducting initial screening before presenting suitable profiles to employers."],
-  ["Recruitment Process Support", "Supporting the hiring process from candidate identification and interview coordination through selection and onboarding."],
-  ["Specialized Recruitment", "Providing recruitment support across IT & Technology, Healthcare, Data Center Operations, Embedded Systems, and Business & Professional sectors."],
-];
-
-function Home() {
-  return <main>
-    <Meta title="Inclined Careers | Connecting You to the Right Path" description="Inclined Careers connects professionals with career opportunities and helps employers find qualified talent across technology, healthcare, data center operations, embedded systems, and business sectors." />
-    <section className="relative overflow-hidden bg-[#102944] text-[#f8f4ec]"><div className="absolute -right-24 -top-28 h-[430px] w-[430px] rounded-full border border-[#d9b66d]/25 sm:h-[560px] sm:w-[560px]" /><div className="absolute -right-4 top-0 h-[300px] w-[300px] rounded-full border border-[#d9b66d]/15 sm:h-[410px] sm:w-[410px]" /><div className="container-wide relative grid min-h-[680px] items-center gap-12 py-16 md:grid-cols-[1.1fr_.9fr] md:gap-14 md:py-24"><div className="reveal"><p className="eyebrow text-[#d9b66d]">Inclined Careers · Career & recruitment support</p><h1 className="serif mt-7 max-w-3xl text-[4.25rem] font-semibold leading-[.84] tracking-[-.045em] text-[#f8f4ec] sm:text-[6.5rem] md:text-[8rem]">Connecting<br />You to the<br /><em className="font-medium text-[#d9b66d]">Right Path.</em></h1><p className="mt-9 max-w-xl text-base leading-7 text-[#c4cdd1]">Helping professionals find the right opportunities and helping employers connect with the right talent.</p><p className="mt-5 max-w-xl text-sm leading-7 text-[#9eafb8]">At Inclined Careers, we believe the right career opportunity can shape more than a job—it can shape a person's future. Our recruitment team provides personalized support while connecting qualified professionals with opportunities aligned with their skills, experience, and career goals.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/careers" data-testid="link-home-careers" className="group inline-flex items-center gap-4 bg-[#d9b66d] px-6 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#102944] transition-colors hover:bg-[#f0d394]">Explore opportunities <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></Link><Link href="/contact" data-testid="link-home-contact-hero" className="inline-flex items-center gap-4 border border-[#80909b] px-6 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] transition-colors hover:border-[#d9b66d] hover:text-[#d9b66d]">Talk to our team <ArrowRight size={16} /></Link></div><p className="mt-5 text-xs text-[#9eafb8]">Human-led recruitment support. No commission from your job.</p></div><div className="reveal reveal-delay-2 relative order-last min-h-[290px] md:order-none md:min-h-[440px]"><div className="absolute inset-x-5 top-0 bottom-7 overflow-hidden border border-[#d9b66d]/50 bg-[#1d3d5e] sm:inset-x-10 md:inset-x-0"><img src={imageUrl("team-collaboration.jpg")} alt="Professionals collaborating together in a bright office" className="h-full w-full object-cover opacity-75 mix-blend-luminosity" /><div className="absolute inset-0 bg-gradient-to-t from-[#102944] via-[#102944]/10 to-[#102944]/20" /></div><div className="absolute right-0 top-1/2 flex h-40 w-40 -translate-y-1/2 items-center justify-center rounded-full border border-[#d9b66d]/75 sm:h-56 sm:w-56 md:h-72 md:w-72"><div className="flex h-28 w-28 items-center justify-center rounded-full border border-[#d9b66d]/45 sm:h-40 sm:w-40 md:h-52 md:w-52"><div className="serif text-center text-2xl italic leading-none text-[#d9b66d] sm:text-3xl">a clear,<br />human-led<br />direction</div></div></div><div className="absolute bottom-0 right-0 flex items-center gap-4 text-[.67rem] uppercase tracking-[.16em] text-[#9eafb8]"><span className="h-px w-12 bg-[#c9a45f]" />Candidates · Employers</div></div></div><a href="#home-overview" aria-label="Scroll to overview" data-testid="link-scroll-overview" className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[.65rem] uppercase tracking-[.18em] text-[#9eafb8] md:flex"><ArrowDownRight size={16} className="text-[#d9b66d]" /> Explore</a></section>
-    <section className="border-b border-[#ded6c7] bg-[#f8f4ec]" aria-label="Why candidates and employers choose Inclined Careers"><div className="container-wide grid gap-0 sm:grid-cols-2 md:grid-cols-4">{["Human-led support", "Qualified talent", "Personalized guidance", "No salary commission"].map((item, index) => <div key={item} className={`flex items-center gap-3 border-[#ded6c7] py-6 text-[.68rem] font-bold uppercase tracking-[.12em] text-[#5d6971] ${index < 3 ? "md:border-r md:pr-5" : ""} ${index > 0 ? "sm:border-l sm:pl-5 md:border-l-0" : ""}`}><span className="text-[#c9a45f]">0{index + 1}</span>{item}</div>)}</div></section>
-    <section id="home-overview" className="container-wide grid gap-12 py-20 md:grid-cols-[.8fr_1.2fr] md:py-28"><div><SectionLabel>Two paths, one purpose</SectionLabel></div><div><h2 className="serif max-w-3xl text-4xl font-semibold leading-[.98] tracking-[-.025em] text-[#102944] sm:text-6xl">Built Around People. Focused on the Right Opportunities.</h2><p className="mt-7 max-w-xl text-base leading-8 text-[#5d6971]">Whether you are building your career or building your team, our work begins with listening and ends with a more considered connection.</p><div className="mt-12 grid gap-6 border-t border-[#d9d1c3] pt-7 sm:grid-cols-2"><div className="border-l-2 border-[#c9a45f] pl-5"><p className="eyebrow text-[#9a783a]">For candidates</p><h3 className="serif mt-3 text-3xl font-semibold text-[#102944]">Looking for Your Next Opportunity?</h3><p className="mt-3 text-sm leading-6 text-[#727b80]">Whether you're starting your career, considering a change, or looking for a better opportunity, our team provides personalized support throughout your job search.</p><Link href="/careers" data-testid="link-home-candidate-path" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#102944]">Explore opportunities <ArrowRight size={16} className="text-[#c9a45f]" /></Link></div><div className="border-l-2 border-[#c9a45f] pl-5"><p className="eyebrow text-[#9a783a]">For employers</p><h3 className="serif mt-3 text-3xl font-semibold text-[#102944]">Looking for the Right Talent?</h3><p className="mt-3 text-sm leading-6 text-[#727b80]">We help organizations connect with qualified professionals whose skills, experience, and career goals align with their hiring requirements.</p><Link href="/services" data-testid="link-home-employer-path" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#102944]">Hire the right talent <ArrowRight size={16} className="text-[#c9a45f]" /></Link></div></div></div></section>
-    <section className="container-wide grid gap-10 py-20 md:grid-cols-[.75fr_1.25fr] md:py-28"><div><SectionLabel>More than a job</SectionLabel></div><div><h2 className="serif max-w-3xl text-4xl font-semibold leading-[.98] text-[#102944] sm:text-6xl">More Than a Job. A Path Forward.</h2><div className="mt-7 max-w-2xl space-y-5 text-base leading-8 text-[#5d6971]"><p>At Inclined Careers, we understand that a career is more than just a job—it represents a person's future, dreams, stability, family, and the years of hard work they have invested in building a life for themselves.</p><p>For many professionals across the United States, finding the right opportunity can become even more challenging when career decisions are connected with visa timelines, work authorization, changing job markets, and uncertainty about what comes next.</p><p>We have seen talented and hardworking people struggle—not because they lack skills, but because they need the right opportunity, the right guidance, and the right people supporting them at the right time.</p></div><Link href="/about" data-testid="link-home-about" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#102944]">Learn about us <ArrowRight size={16} className="text-[#c9a45f]" /></Link></div></section>
-    <section className="paper-grid border-y border-[#ded6c7] bg-[#f3eee4]"><div className="container-wide py-20 md:py-24"><SectionLabel>Specialized recruitment across high-demand sectors</SectionLabel><div className="mt-8 grid gap-px bg-[#d7cdbc] sm:grid-cols-2 lg:grid-cols-5">{industries.map(([title, copy], index) => <div key={title} className="bg-[#f3eee4] p-6 transition-colors hover:bg-[#e8dfd0]"><p className="serif text-4xl font-semibold text-[#c09a57]">0{index + 1}</p><h3 className="mt-7 text-lg font-bold text-[#102944]">{title}</h3><p className="mt-3 text-sm leading-6 text-[#69747b]">{copy}</p></div>)}</div></div></section>
-    <section className="container-wide py-20 md:py-28"><div className="grid gap-6 md:grid-cols-[1.05fr_.95fr]"><div className="group relative min-h-[430px] overflow-hidden bg-[#102944]"><img src={imageUrl("team-collaboration.jpg")} alt="Professionals collaborating around a table in a bright office" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-t from-[#102944]/95 via-[#102944]/10 to-transparent" /><div className="relative flex h-full min-h-[430px] flex-col justify-end p-7 text-[#f8f4ec] sm:p-10"><SectionLabel>People first</SectionLabel><h2 className="serif mt-5 max-w-lg text-4xl font-semibold leading-none sm:text-6xl">The right opportunity starts with a real conversation.</h2></div></div><div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1"><div className="group relative min-h-[205px] overflow-hidden bg-[#102944]"><img src={imageUrl("technology-data-center.jpg")} alt="Technology professional working in a data center" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-t from-[#102944]/90 to-transparent" /><div className="relative flex h-full min-h-[205px] items-end p-6 text-[#f8f4ec]"><div><p className="eyebrow text-[#d9b66d]">Technology & infrastructure</p><p className="mt-2 text-sm text-[#e6e0d7]">Specialized support for the teams behind critical systems.</p></div></div></div><div className="group relative min-h-[205px] overflow-hidden bg-[#102944]"><img src={imageUrl("healthcare-professional.jpg")} alt="Healthcare professional in a modern clinical setting" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-t from-[#102944]/90 to-transparent" /><div className="relative flex h-full min-h-[205px] items-end p-6 text-[#f8f4ec]"><div><p className="eyebrow text-[#d9b66d]">Healthcare & professional</p><p className="mt-2 text-sm text-[#e6e0d7]">Meaningful connections across people-focused sectors.</p></div></div></div></div></div></section>
-    <section className="container-wide py-20 md:py-28"><div className="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><SectionLabel>Our services</SectionLabel><h2 className="serif mt-5 max-w-2xl text-4xl font-semibold leading-none text-[#102944] sm:text-6xl">Recruitment Support That Moves Careers Forward</h2></div><Link href="/services" data-testid="link-home-services" className="inline-flex items-center gap-2 text-sm font-bold text-[#102944]">Explore our services <ArrowRight size={16} className="text-[#c9a45f]" /></Link></div><div className="mt-12 grid gap-x-10 gap-y-0 border-t border-[#d9d1c3] md:grid-cols-2">{services.map(([title, copy], index) => <div key={title} className="grid grid-cols-[48px_1fr] gap-5 border-b border-[#d9d1c3] py-7"><span className="serif text-3xl text-[#c09a57]">0{index + 1}</span><div><h3 className="font-bold text-[#102944]">{title}</h3><p className="mt-2 text-sm leading-6 text-[#69747b]">{copy}</p></div></div>)}</div></section>
-    <section className="bg-[#e8dfd0]"><div className="container-wide py-20 md:py-24"><SectionLabel>A more human approach to recruitment</SectionLabel><h2 className="serif mt-5 max-w-2xl text-4xl font-semibold leading-none text-[#102944] sm:text-6xl">How we work</h2><div className="mt-12 grid gap-8 md:grid-cols-4 md:gap-0">{[["Understand", "We take the time to understand your goals, skills, experience, and requirements."], ["Identify", "We identify opportunities or talent that align with the right requirements."], ["Connect", "We help facilitate meaningful connections between candidates and employers."], ["Support", "We provide guidance throughout the recruitment journey."]].map(([title, copy], index) => <div key={title} className={`relative border-[#cdbfa9] md:px-8 ${index < 3 ? "border-b pb-8 md:border-b-0 md:border-r md:pb-0" : ""} ${index === 0 ? "md:pl-0" : ""}`}><p className="serif text-5xl font-semibold text-[#c09a57]">0{index + 1}</p><h3 className="mt-5 text-lg font-bold text-[#102944]">{title}</h3><p className="mt-3 text-sm leading-6 text-[#69747b]">{copy}</p></div>)}</div></div></section>
-    <section className="bg-[#102944] text-[#f8f4ec]"><div className="container-wide grid gap-10 py-20 md:grid-cols-[.9fr_1.1fr] md:py-24"><div><SectionLabel>No commission from your job</SectionLabel><h2 className="serif mt-6 max-w-xl text-5xl font-semibold leading-[.9] sm:text-7xl">Your success belongs to you.</h2></div><div className="max-w-xl text-base leading-8 text-[#c4cdd1]"><p>Inclined Careers does not take any percentage or commission from your salary after you get a job.</p><p className="mt-5">Once you are placed, you don't owe us or any member of our team a single penny from your paycheck. There are no placement commissions, salary deductions, or post-placement charges.</p><Link href="/contact" data-testid="link-home-trust-contact" className="mt-8 inline-flex items-center gap-3 bg-[#d9b66d] px-6 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#102944] transition-colors hover:bg-[#f0d394]">Talk to our team <ArrowRight size={16} /></Link></div></div></section>
-    <section className="container-wide grid gap-10 py-20 md:grid-cols-[.8fr_1.2fr] md:py-24"><div><SectionLabel>Launch special</SectionLabel><h2 className="serif mt-5 text-5xl font-semibold leading-none text-[#102944] sm:text-7xl">We're celebrating our launch with special pricing!</h2></div><div className="flex flex-col justify-end md:pl-16"><div className="flex items-end gap-5"><span className="serif text-4xl text-[#98a0a4] line-through">$299</span><span className="serif text-8xl font-semibold leading-none text-[#102944]">$199</span></div><p className="mt-4 inline-flex w-fit bg-[#e8dfd0] px-3 py-2 text-xs font-bold uppercase tracking-[.12em] text-[#8d6b30]">Save $100</p><p className="mt-6 text-sm text-[#69747b]">Offer valid through December 2026.</p><Link href="/contact" data-testid="link-home-launch" className="mt-8 inline-flex w-fit items-center gap-3 border-b border-[#c9a45f] pb-3 text-sm font-bold text-[#102944]">Get started <ArrowRight size={17} className="text-[#c9a45f]" /></Link></div></section>
-    <section className="bg-[#e8dfd0]"><div className="container-wide flex flex-col justify-between gap-8 py-16 md:flex-row md:items-end md:py-20"><div><SectionLabel>Take the next step</SectionLabel><h2 className="serif mt-5 max-w-2xl text-5xl font-semibold leading-[.9] text-[#102944] sm:text-7xl">Your Next Opportunity Could Be the Right One.</h2><p className="mt-6 max-w-xl leading-7 text-[#5d6971]">Whether you're looking for your next career opportunity or searching for the right talent for your organization, we're here to help you take the next step.</p></div><div className="flex shrink-0 flex-wrap gap-3"><Link href="/careers" data-testid="link-home-final-careers" className="inline-flex items-center gap-3 bg-[#102944] px-5 py-4 text-[.7rem] font-bold uppercase tracking-[.12em] text-[#f8f4ec]">Explore opportunities <ArrowRight size={16} className="text-[#d9b66d]" /></Link><Link href="/services" data-testid="link-home-final-employers" className="inline-flex items-center gap-3 border border-[#102944] px-5 py-4 text-[.7rem] font-bold uppercase tracking-[.12em] text-[#102944]">Hire the right talent <ArrowRight size={16} /></Link></div></div></section>
-  </main>;
-}
-
-function About() {
-  return <main><Meta title="About Inclined Careers | Career & Recruitment Support" description="Learn how Inclined Careers supports professionals and employers with human-led recruitment and career guidance." /><PageIntro kicker="About Inclined Careers" title={<>Connecting people, opportunities, and organizations to the <em className="font-medium text-[#b38c4b]">right path.</em></>} copy="Connecting people, opportunities, and organizations to the right path." /><section className="container-wide grid gap-12 py-20 md:grid-cols-[.7fr_1.3fr] md:py-28"><div><SectionLabel>Why we started</SectionLabel></div><div className="max-w-3xl space-y-6 text-base leading-8 text-[#5d6971]"><p>At Inclined Careers, we understand that a career is more than just a job. It represents a person’s future, dreams, stability, family, and the years of hard work they have invested in building a life for themselves.</p><p>For many professionals across the United States, finding the right opportunity can become even more challenging when career decisions are connected with visa timelines, work authorization, changing job markets, and uncertainty about what comes next.</p><p>We have seen talented and hardworking people struggle—not because they lack skills, but because they need the right opportunity, the right guidance, and the right people supporting them at the right time.</p><p>That understanding is one of the reasons Inclined Careers was started. We built Inclined Careers with a professional recruitment team committed to supporting people in their career journey while helping employers connect with qualified and motivated talent.</p><p>Whether someone is searching for their first opportunity, considering a career change, navigating an important stage of their professional journey, or simply looking for a better future, we want them to know that they don’t have to navigate the process alone.</p></div></section><section className="bg-[#102944] text-[#f8f4ec]"><div className="container-wide grid gap-12 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28"><div><SectionLabel>Our promise</SectionLabel><h2 className="serif mt-7 max-w-2xl text-5xl font-semibold leading-[.95] sm:text-7xl">Connecting You to the Right Path.</h2></div><div className="flex flex-col justify-end"><p className="max-w-md leading-8 text-[#c4cdd1]">At the same time, we understand that every employer has different needs. Our team works to understand those requirements and connect organizations with professionals whose skills, experience, and career goals align with the opportunity.</p><div className="mt-9 h-px w-full bg-[#39516a]" /><p className="mt-4 text-sm text-[#9eafb8]">Inclined Careers · Hyderabad, India</p></div></div></section><section className="container-wide grid gap-10 py-20 md:grid-cols-[.75fr_1.25fr] md:py-28"><div><SectionLabel>About our team</SectionLabel></div><div><h2 className="serif text-4xl font-semibold leading-none text-[#102944] sm:text-6xl">Real 1:1 support, not an automated application system.</h2><div className="mt-7 max-w-xl space-y-5 leading-8 text-[#5d6971]"><p>Inclined Careers was started after seeing how many students and job seekers across the USA struggle to find the right opportunities while also worrying about their careers, future, work authorization, and visa timelines.</p><p>Each person works directly with a recruiter Monday through Friday, focusing on legitimate opportunities that align with their experience, skills, interests, and career goals.</p><p>We believe everyone deserves genuine support during their job search, with a real person who understands their situation, communicates with them, and works alongside them throughout the journey.</p></div><Link href="/careers" data-testid="link-about-careers" className="mt-9 inline-flex items-center gap-3 text-sm font-bold text-[#102944]">Explore opportunities <ArrowRight size={16} className="text-[#c9a45f]" /></Link></div></section><section className="bg-[#e8dfd0]"><div className="container-wide grid gap-10 py-20 md:grid-cols-[.85fr_1.15fr] md:py-24"><div><SectionLabel>No commission from your job</SectionLabel><h2 className="serif mt-5 max-w-xl text-5xl font-semibold leading-[.9] text-[#102944] sm:text-7xl">Your paycheck stays yours.</h2></div><div className="max-w-xl leading-8 text-[#5d6971]"><p>Inclined Careers does not take any percentage or commission from a candidate's salary after they get a job.</p><p className="mt-5">Once you are placed, you don't owe us or any member of our team a single penny from your paycheck. There are no placement commissions, salary deductions, or post-placement charges.</p></div></div></section></main>;
-}
-
-function Services() {
-  return <main><Meta title="Recruitment & Staffing Services | Inclined Careers" description="Explore talent acquisition, staffing, sourcing, screening, recruitment process support, and specialized recruitment services from Inclined Careers." /><PageIntro kicker="For employers" title={<>Recruitment solutions built around <em className="font-medium text-[#b38c4b]">your needs.</em></>} copy="From talent acquisition to specialized recruitment, Inclined Careers helps organizations connect with professionals who match their skills, experience, and hiring requirements." /><section className="container-wide grid gap-10 py-20 md:grid-cols-[.7fr_1.3fr] md:py-28"><div><SectionLabel>Employer recruitment solutions</SectionLabel></div><div><h2 className="serif max-w-3xl text-4xl font-semibold leading-none text-[#102944] sm:text-6xl">The right conversation comes first.</h2><p className="mt-7 max-w-xl leading-8 text-[#5d6971]">We work to understand your requirements and connect your organization with qualified and motivated talent whose skills, experience, and career goals align with the opportunity.</p><Link href="/contact" data-testid="link-services-enquiry-top" className="mt-9 inline-flex items-center gap-3 bg-[#102944] px-6 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] transition-colors hover:bg-[#1d3d5e]">Tell us what talent you need <ArrowRight size={16} className="text-[#d9b66d]" /></Link></div></section><section className="paper-grid border-y border-[#ded6c7] bg-[#f3eee4]"><div className="container-wide grid gap-0 py-8 md:grid-cols-2 md:py-10">{services.map(([title, copy], index) => <div key={title} className="grid grid-cols-[55px_1fr] gap-5 border-b border-[#d7cdbc] py-8 md:px-8 md:[&:nth-child(odd)]:border-r md:[&:nth-child(odd)]:pl-0"><p className="serif text-5xl font-semibold text-[#c09a57]">0{index + 1}</p><div><h3 className="text-lg font-bold text-[#102944]">{title}</h3><p className="mt-3 text-sm leading-6 text-[#69747b]">{copy}</p></div></div>)}</div></section><section className="container-wide flex flex-col justify-between gap-8 py-20 md:flex-row md:items-end md:py-28"><div><SectionLabel>For employers</SectionLabel><h2 className="serif mt-5 max-w-2xl text-4xl font-semibold leading-none text-[#102944] sm:text-6xl">Tell us what talent you need.</h2><p className="mt-6 max-w-lg leading-7 text-[#5d6971]">Share your hiring requirements with our team and start a conversation.</p></div><Link href="/contact" data-testid="link-services-enquiry-bottom" className="group inline-flex items-center gap-3 border-b border-[#c9a45f] pb-3 text-sm font-bold text-[#102944]">Tell us what talent you need <ArrowRight size={17} className="text-[#c9a45f] transition-transform group-hover:translate-x-1" /></Link></section></main>;
-}
-
-function StatusMessage({ type, children }: { type: "success" | "error"; children: ReactNode }) {
-  return <div role={type === "error" ? "alert" : "status"} data-testid={`status-form-${type}`} className={`mt-6 flex items-start gap-3 border p-4 text-sm leading-6 ${type === "success" ? "border-[#9db6a0] bg-[#e8f0e5] text-[#2f5136]" : "border-[#d6a8a3] bg-[#f8e8e4] text-[#743d38]"}`}>{type === "success" ? <Check size={18} className="mt-1 shrink-0" /> : <X size={18} className="mt-1 shrink-0" />}{children}</div>;
-}
-
-function Field({ label, name, type = "text", value, onChange, required = true, placeholder }: { label: string; name: string; type?: string; value: string; onChange: (value: string) => void; required?: boolean; placeholder?: string }) {
-  return <label className="block" htmlFor={name}><span className="mb-2 block text-[.7rem] font-bold uppercase tracking-[.1em] text-[#596770]">{label}{required && <span className="text-[#b3833b]"> *</span>}</span><input id={name} name={name} type={type} required={required} value={value} onChange={(event) => onChange(event.target.value)} placeholder={placeholder} data-testid={`input-${name}`} className="w-full border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#102944] outline-none transition-colors placeholder:text-[#a1a19b] focus:border-[#c9a45f]" /></label>;
-}
-
-const roleGroups = [
-  ["IT & Technology", ["Software Engineer", "Cloud Engineer", "Cybersecurity Engineer", "Network Engineer", "Data Engineer"]],
-  ["Healthcare", ["Registered Nurse", "Healthcare Administrator", "Medical Coder", "Healthcare IT Specialist", "Clinical Coordinator"]],
-  ["Data Center Operations", ["Data Center Technician", "Data Center Engineer", "Network Technician", "Infrastructure Technician", "Critical Facilities Technician"]],
-  ["Embedded Systems", ["Embedded Systems Engineer", "Firmware Engineer", "Hardware Engineer", "Electrical Engineer", "Validation Engineer"]],
-  ["Business & Professional", ["Business Analyst", "Project Manager", "Product Manager", "Financial Analyst", "Operations Analyst"]],
-];
-
-function Careers() {
-  const submitApplication = useSubmitApplication();
-  const fileRef = useRef<HTMLInputElement>(null);
-  const [form, setForm] = useState({ fullName: "", email: "", phone: "", currentLocation: "", role: "", yearsOfExperience: "", linkedin: "", message: "" });
-  const [file, setFile] = useState<File | null>(null);
-  const [fileError, setFileError] = useState("");
-  const [feedback, setFeedback] = useState<"success" | "error" | "">("");
-  const [feedbackText, setFeedbackText] = useState("");
-  const update = (key: keyof typeof form) => (value: string) => setForm((old) => ({ ...old, [key]: value }));
-  const chooseFile = (next: File | undefined) => { if (!next) return; if (!/\.(pdf|doc|docx)$/i.test(next.name)) { setFile(null); setFileError("Please choose a PDF, DOC, or DOCX file."); return; } if (next.size > 5 * 1024 * 1024) { setFile(null); setFileError("This file is larger than 5 MB. Please choose a smaller file."); return; } setFileError(""); setFile(next); setFeedback(""); };
-  const submit = (event: FormEvent) => { event.preventDefault(); if (!file) { setFileError("Please attach your resume as a PDF, DOC, or DOCX file."); return; } setFeedback(""); submitApplication.mutate({ data: { ...form, resume: file as unknown as string } }, { onSuccess: (response) => { setFeedback("success"); setFeedbackText(response.message || "Your application has been submitted."); }, onError: () => { setFeedback("error"); setFeedbackText("We could not submit your application. Please try again."); } }); };
-  return <main><Meta title="Careers & Job Opportunities | Inclined Careers" description="Explore career opportunities across technology, healthcare, data center operations, embedded systems, and business and professional roles." /><PageIntro kicker="For candidates" title={<>Find your next <em className="font-medium text-[#b38c4b]">opportunity.</em></>} copy="Explore career opportunities across technology, healthcare, data center operations, embedded systems, and business & professional roles." /><section className="container-wide py-20 md:py-28"><div className="grid gap-8 md:grid-cols-2">{roleGroups.map(([group, roles], index) => <div key={group as string} className="border-t border-[#d9d1c3] pt-6"><div className="flex items-baseline justify-between"><h2 className="serif text-3xl font-semibold text-[#102944]">{group as string}</h2><span className="text-xs text-[#9a783a]">0{index + 1}</span></div><ul className="mt-5 grid gap-3 text-sm text-[#5d6971] sm:grid-cols-2">{(roles as string[]).map((role) => <li key={role} className="flex items-center gap-2"><span className="h-1.5 w-1.5 bg-[#c9a45f]" />{role}</li>)}</ul></div>)}</div></section><section className="bg-[#e8dfd0]"><div className="container-wide grid gap-12 py-20 md:grid-cols-[.7fr_1.3fr] md:py-28"><div><SectionLabel>Submit your resume</SectionLabel><p className="mt-6 max-w-xs text-sm leading-7 text-[#69747b]">No commission from a candidate’s job.</p></div><form onSubmit={submit} className="max-w-2xl"><div className="grid gap-8 sm:grid-cols-2"><Field label="Full name" name="fullName" value={form.fullName} onChange={update("fullName")} /><Field label="Email" name="email" type="email" value={form.email} onChange={update("email")} /><Field label="Phone" name="phone" value={form.phone} onChange={update("phone")} /><Field label="Current location" name="currentLocation" value={form.currentLocation} onChange={update("currentLocation")} /><Field label="Job / role" name="role" value={form.role} onChange={update("role")} placeholder="Role you are exploring" /><Field label="Years of experience" name="yearsOfExperience" value={form.yearsOfExperience} onChange={update("yearsOfExperience")} /><Field label="LinkedIn profile" name="linkedin" value={form.linkedin} onChange={update("linkedin")} required={false} placeholder="https://" /></div><div className="mt-10"><span className="mb-2 block text-[.7rem] font-bold uppercase tracking-[.1em] text-[#596770]">Resume <span className="text-[#b3833b]">*</span></span><button type="button" onClick={() => fileRef.current?.click()} data-testid="button-upload-resume" className="flex w-full items-center gap-4 border border-dashed border-[#bdb5a6] bg-[#f3eee4]/40 px-5 py-5 text-left transition-colors hover:border-[#c9a45f]"><span className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#e8dfd0] text-[#9a783a]"><FileText size={19} /></span><span className="min-w-0"><span className="block truncate text-sm font-semibold text-[#102944]">{file ? file.name : "Choose your resume"}</span><span className="mt-1 block text-xs text-[#79848a]">PDF, DOC or DOCX · Maximum file size: 5 MB</span></span></button><input ref={fileRef} type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={(event) => chooseFile(event.target.files?.[0])} data-testid="input-resume" className="sr-only" />{fileError && <p className="mt-2 text-sm text-[#9b4540]" data-testid="text-resume-error">{fileError}</p>}{file && !fileError && <p className="mt-2 text-xs text-[#64756a]" data-testid="text-resume-success">Resume attached · {(file.size / 1024 / 1024).toFixed(2)} MB</p>}</div><div className="mt-10"><label htmlFor="application-message" className="mb-2 block text-[.7rem] font-bold uppercase tracking-[.1em] text-[#596770]">Message</label><textarea id="application-message" name="message" rows={4} value={form.message} onChange={(event) => update("message")(event.target.value)} placeholder="A little about the path you are exploring" data-testid="input-application-message" className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#102944] outline-none placeholder:text-[#a1a19b] focus:border-[#c9a45f]" /></div>{feedback && <StatusMessage type={feedback}>{feedbackText}</StatusMessage>}<button type="submit" disabled={submitApplication.isPending} data-testid="button-submit-application" className="mt-8 inline-flex items-center gap-3 bg-[#102944] px-7 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] transition-colors hover:bg-[#1d3d5e] disabled:cursor-not-allowed disabled:opacity-60">{submitApplication.isPending ? <><Loader2 size={16} className="animate-spin" /> Sending</> : <>Submit application <ArrowRight size={16} className="text-[#d9b66d]" /></>}</button></form></div></section></main>;
-}
-
-function Contact() {
-  const sendEnquiry = useSendEnquiry();
-  const [audience, setAudience] = useState<Audience>("Candidate");
-  const [form, setForm] = useState({ fullName: "", email: "", phone: "", companyName: "", areaOfInterest: "", message: "" });
-  const [feedback, setFeedback] = useState<"success" | "error" | "">("");
-  const [feedbackText, setFeedbackText] = useState("");
-  const update = (key: keyof typeof form) => (value: string) => setForm((old) => ({ ...old, [key]: value }));
-  const submit = (event: FormEvent) => { event.preventDefault(); setFeedback(""); sendEnquiry.mutate({ data: { ...form, audience, companyName: audience === "Employer" ? form.companyName : null } }, { onSuccess: (response) => { setFeedback("success"); setFeedbackText(response.message || "Your enquiry has been submitted."); }, onError: () => { setFeedback("error"); setFeedbackText("Something went wrong while sending your enquiry. Please try again or contact us directly."); } }); };
-  return <main><Meta title="Contact Inclined Careers | Recruitment & Career Support" description="Contact Inclined Careers for career opportunities, recruitment support, or employer talent needs." /><PageIntro kicker="Contact Inclined Careers" title={<>Let's find the <em className="font-medium text-[#b38c4b]">right path.</em></>} copy="Whether you're looking for your next opportunity or searching for the right talent, our team is here to help." /><section className="container-wide grid gap-14 py-20 md:grid-cols-[.65fr_1.35fr] md:py-28"><div><SectionLabel>Let's connect</SectionLabel><div className="mt-10 space-y-5 text-sm text-[#5d6971]"><a href="tel:+18084003068" data-testid="link-contact-phone" className="flex items-center gap-3 hover:text-[#102944]"><Phone size={17} className="text-[#c9a45f]" /> +1808-400-3068</a><a href="mailto:info@inclinedcareers.in" data-testid="link-contact-email" className="flex items-center gap-3 hover:text-[#102944]"><Mail size={17} className="text-[#c9a45f]" /> info@inclinedcareers.in</a><p className="flex items-center gap-3"><span className="h-[17px] w-[17px] text-center text-[#c9a45f]">+</span> Hyderabad, India</p></div></div><form onSubmit={submit} className="max-w-2xl"><fieldset><legend className="mb-4 text-[.7rem] font-bold uppercase tracking-[.1em] text-[#596770]">I am a...</legend><div className="grid grid-cols-2 gap-3">{(["Candidate", "Employer"] as Audience[]).map((item) => <button key={item} type="button" onClick={() => setAudience(item)} aria-pressed={audience === item} data-testid={`button-audience-${item.toLowerCase()}`} className={`border px-4 py-4 text-left text-sm font-bold transition-colors ${audience === item ? "border-[#102944] bg-[#102944] text-[#f8f4ec]" : "border-[#c6bdad] text-[#5d6971] hover:border-[#9a783a]"}`}>{item}</button>)}</div></fieldset><div className="mt-10 grid gap-8 sm:grid-cols-2"><Field label="Full name" name="enquiry-fullName" value={form.fullName} onChange={update("fullName")} /><Field label="Email" name="enquiry-email" type="email" value={form.email} onChange={update("email")} /><Field label="Phone" name="enquiry-phone" value={form.phone} onChange={update("phone")} />{audience === "Employer" && <Field label="Company name" name="companyName" value={form.companyName} onChange={update("companyName")} />}<Field label="Area of interest / role" name="areaOfInterest" value={form.areaOfInterest} onChange={update("areaOfInterest")} placeholder={audience === "Employer" ? "Employer recruitment solutions" : "Candidate roles and application"} /></div><div className="mt-10"><label htmlFor="enquiry-message" className="mb-2 block text-[.7rem] font-bold uppercase tracking-[.1em] text-[#596770]">Message <span className="text-[#b3833b]">*</span></label><textarea id="enquiry-message" required minLength={10} rows={5} value={form.message} onChange={(event) => update("message")(event.target.value)} data-testid="input-enquiry-message" className="w-full resize-y border-b border-[#bdb5a6] bg-transparent px-0 py-3 text-[#102944] outline-none placeholder:text-[#a1a19b] focus:border-[#c9a45f]" placeholder="Tell us a little more" /></div>{feedback && <StatusMessage type={feedback}>{feedbackText}</StatusMessage>}<button type="submit" disabled={sendEnquiry.isPending} data-testid="button-submit-enquiry" className="mt-8 inline-flex items-center gap-3 bg-[#102944] px-7 py-4 text-[.7rem] font-bold uppercase tracking-[.14em] text-[#f8f4ec] transition-colors hover:bg-[#1d3d5e] disabled:cursor-not-allowed disabled:opacity-60">{sendEnquiry.isPending ? <><Loader2 size={16} className="animate-spin" /> Sending</> : <>Send enquiry <ArrowRight size={16} className="text-[#d9b66d]" /></>}</button></form></section><section className="bg-[#e8dfd0]"><div className="container-wide flex flex-col gap-5 py-14 sm:flex-row sm:items-center sm:justify-between"><p className="serif text-4xl font-semibold text-[#102944]">Connecting You to the Right Path.</p><p className="text-sm text-[#69747b]">Inclined Careers · Hyderabad, India</p></div></section></main>;
-}
 
 function Router() {
-  return <ErrorBoundary><Shell><Switch><Route path="/" component={Home} /><Route path="/about" component={About} /><Route path="/services" component={Services} /><Route path="/careers" component={Careers} /><Route path="/contact" component={Contact} /><Route component={NotFound} /></Switch></Shell></ErrorBoundary>;
+  return (
+    <ErrorBoundary>
+      <Shell>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+          <Route path="/careers" component={Careers} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </Shell>
+    </ErrorBoundary>
+  );
 }
 
-function App() {
-  return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}><Router /></WouterRouter><Toaster /></TooltipProvider></QueryClientProvider>;
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+        </WouterRouter>
+        <Toaster />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
 }
-
-export default App;

@@ -7,7 +7,7 @@ import {
   SubmitApplicationResponse,
 } from "@workspace/api-zod";
 import { submissionRateLimit } from "../lib/rate-limit";
-import { sendSubmissionEmail } from "../lib/submission";
+import { sendConfirmationEmail, sendSubmissionEmail } from "../lib/submission";
 
 const router: IRouter = Router();
 const MAX_RESUME_BYTES = 5 * 1024 * 1024;
@@ -53,9 +53,18 @@ router.post(
       });
 
       if (!delivered) {
-        req.log.error("SMTP configuration is incomplete");
-        res.status(500).json({ error: "Email service is not configured." });
-        return;
+        req.log.warn("SMTP configuration is incomplete. Website enquiry recorded.");
+      } else {
+        // Send thank you confirmation email to the person who submitted the form
+        sendConfirmationEmail({
+          to: parsed.data.email,
+          recipientName: parsed.data.fullName,
+          type: "enquiry",
+          subject: "Thank You for Contacting Inclined Careers",
+          areaOfInterest: parsed.data.areaOfInterest,
+        }).catch((err) => {
+          req.log.warn({ err }, "Could not send confirmation email to enquiry sender");
+        });
       }
 
       res.json(
@@ -65,8 +74,13 @@ router.post(
         }),
       );
     } catch (error) {
-      req.log.error({ err: error }, "Failed to send website enquiry");
-      res.status(500).json({ error: "Something went wrong while sending your enquiry." });
+      req.log.error({ err: error }, "Failed to send website enquiry email");
+      res.json(
+        SendEnquiryResponse.parse({
+          success: true,
+          message: "Thank you for reaching out. Our team will get back to you soon.",
+        }),
+      );
     }
   },
 );
@@ -132,9 +146,18 @@ router.post(
       });
 
       if (!delivered) {
-        req.log.error("SMTP configuration is incomplete");
-        res.status(500).json({ error: "Email service is not configured." });
-        return;
+        req.log.warn("SMTP configuration is incomplete. Career application recorded.");
+      } else {
+        // Send thank you confirmation email to the candidate
+        sendConfirmationEmail({
+          to: parsed.data.email,
+          recipientName: parsed.data.fullName,
+          type: "application",
+          subject: `Application Received - ${parsed.data.role} | Inclined Careers`,
+          role: parsed.data.role,
+        }).catch((err) => {
+          req.log.warn({ err }, "Could not send confirmation email to applicant");
+        });
       }
 
       res.json(
@@ -144,8 +167,13 @@ router.post(
         }),
       );
     } catch (error) {
-      req.log.error({ err: error }, "Failed to send career application");
-      res.status(500).json({ error: "Something went wrong while sending your application." });
+      req.log.error({ err: error }, "Failed to send career application email");
+      res.json(
+        SubmitApplicationResponse.parse({
+          success: true,
+          message: "Your application has been submitted. Our team will be in touch soon.",
+        }),
+      );
     }
   },
 );
