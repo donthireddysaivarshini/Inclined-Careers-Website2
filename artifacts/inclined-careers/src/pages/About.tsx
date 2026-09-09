@@ -19,8 +19,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <h1 className="serif text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider uppercase text-[#011330]">
-              Connecting people, opportunities, and organizations to the{" "}
-              <span className="font-semibold text-[#BA780E]">right path.</span>
+              Connecting You to the <span className="font-semibold text-[#BA780E]">Right Path.</span>
             </h1>
           </ScrollReveal>
         </div>
