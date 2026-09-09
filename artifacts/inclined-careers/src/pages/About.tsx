@@ -19,7 +19,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <h1 className="serif text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider uppercase text-[#011330]">
-              Connecting You to the <span className="font-semibold text-[#BA780E]">Right Path.</span>
+              Connecting People to the <span className="font-semibold text-[#BA780E]">Right Path.</span>
             </h1>
           </ScrollReveal>
         </div>
@@ -49,11 +49,11 @@ export default function About() {
                   <span className="flex items-center gap-1.5"><span className="text-[#BA780E]">✦</span> 1:1 Human Guidance</span>
                 </div>
               </div>
-              <div className="relative h-52 sm:h-60 w-full overflow-hidden border-t border-[#ded6c7]/60">
+              <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden border-t border-[#ded6c7]/60">
                 <img
                   src={IMAGES.teamCollaboration}
                   alt="A Career Is More Than Just A Job - Inclined Careers Mission"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/65 via-transparent to-transparent" />
               </div>
