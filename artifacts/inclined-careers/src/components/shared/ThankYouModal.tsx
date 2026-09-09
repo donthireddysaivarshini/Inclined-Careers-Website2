@@ -91,7 +91,7 @@ export function ThankYouModal({
             {/* Title */}
             <h3
               id="thank-you-title"
-              className="serif text-2xl sm:text-3xl font-bold tracking-tight text-[#011330]"
+              className="serif text-lg sm:text-xl font-semibold tracking-wider text-[#011330]"
             >
               {title}
             </h3>

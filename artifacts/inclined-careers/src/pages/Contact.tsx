@@ -75,8 +75,8 @@ export default function Contact() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight uppercase tracking-wide text-[#011330]">
-              Let's Find The <span className="text-[#BA780E]">Right Path.</span>
+            <h1 className="serif text-xl sm:text-2xl md:text-3xl font-semibold leading-tight tracking-wider uppercase text-[#011330]">
+              Let's Find The <span className="font-semibold text-[#BA780E]">Right Path.</span>
             </h1>
             <p className="mt-3.5 max-w-xl mx-auto text-sm md:text-base text-[#5d6971]">
               Whether you're looking for your next opportunity or searching for the right talent, our team is here to help.
@@ -91,7 +91,7 @@ export default function Contact() {
           <ScrollReveal className="space-y-8">
             <div>
               <SectionLabel>Let's connect</SectionLabel>
-              <h2 className="serif mt-4 text-3xl font-bold leading-tight uppercase tracking-wide text-[#011330] sm:text-4xl">
+              <h2 className="serif mt-2.5 text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider uppercase text-[#011330]">
                 We're Here To Help You Navigate Forward
               </h2>
               <p className="mt-4 text-sm leading-7 text-[#5d6971]">
@@ -131,7 +131,7 @@ export default function Contact() {
 
             <div className="rounded-2xl border border-[#ded6c7] bg-[#011330] p-6 text-[#f8f4ec] shadow-xl">
               <p className="eyebrow text-[#BA780E]">Response Time</p>
-              <p className="serif text-xl font-semibold mt-1">Within 24 Business Hours</p>
+              <p className="serif text-base sm:text-lg font-semibold mt-1">Within 24 Business Hours</p>
               <p className="text-xs text-[#b9c1c6] mt-2 leading-relaxed">
                 Every enquiry is addressed directly by a senior recruitment team member.
               </p>
@@ -255,8 +255,8 @@ export default function Contact() {
 
       {/* FOOTER STRIP */}
       <section className="bg-[#e8dfd0] border-t border-[#ded6c7]">
-        <div className="container-wide flex flex-col gap-4 py-14 sm:flex-row sm:items-center sm:justify-between">
-          <p className="serif text-3xl font-semibold text-[#011330]">
+        <div className="container-wide flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
+          <p className="serif text-lg sm:text-xl md:text-2xl font-semibold text-[#011330]">
             Connecting You to the Right Path.
           </p>
           <p className="text-xs uppercase tracking-wider text-[#69747b]">

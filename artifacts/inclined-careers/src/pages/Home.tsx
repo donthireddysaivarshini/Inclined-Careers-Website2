@@ -56,13 +56,19 @@ export default function Home() {
               <span>Career &amp; Recruitment Support</span>
             </div>
 
-            <h1 className="serif text-3xl font-bold leading-[1.14] tracking-wider text-[#f8f4ec] uppercase">
-              Connecting you to the
-              <br />
-              <span className="font-bold text-[#BA780E]">Right Path.</span>
+            {/* 1. The Main H1 (Stacked Brand Name) */}
+            <h1 className="serif text-3xl sm:text-4xl font-bold tracking-wide uppercase leading-none">
+              <span className="block text-[#FFFFFF]">INCLINED</span>
+              <span className="block text-[#BA780E]">CAREERS</span>
             </h1>
 
-            <p className="mt-3.5 text-sm font-medium leading-relaxed text-[#f0ebe1]">
+            {/* 2. The Sub-heading (The Tagline) */}
+            <p className="mt-2.5 text-lg sm:text-xl font-medium text-[#FFFFFF]">
+              Connecting You to the Right Path.
+            </p>
+
+            {/* 3. The Body Text */}
+            <p className="mt-4 text-xs sm:text-sm font-normal leading-relaxed text-[#f0ebe1]">
               Helping professionals find the right opportunities and helping employers connect with the right talent.
             </p>
 
@@ -134,16 +140,22 @@ export default function Home() {
                   <ScrollReveal>
                     <div className="inline-flex items-center gap-2 rounded-full border border-[#BA780E]/40 bg-[#011330]/80 px-3.5 py-1 text-[.66rem] uppercase tracking-[.16em] text-[#BA780E] backdrop-blur-md shadow-sm mb-4">
                       <Sparkles size={12} />
-                      <span>Inclined Careers · Career &amp; Recruitment Support</span>
+                      <span>Career &amp; Recruitment Support</span>
                     </div>
 
-                    <h1 className="serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-wider text-[#f8f4ec] uppercase">
-                      Connecting you to the
-                      <br />
-                      <span className="font-bold text-[#BA780E]">Right Path.</span>
+                    {/* 1. The Main H1 (Stacked Brand Name) */}
+                    <h1 className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide uppercase leading-none">
+                      <span className="block text-[#FFFFFF]">INCLINED</span>
+                      <span className="block text-[#BA780E]">CAREERS</span>
                     </h1>
 
-                    <p className="mt-4 max-w-xl text-base sm:text-lg font-medium leading-snug text-[#f0ebe1]">
+                    {/* 2. The Sub-heading (The Tagline) */}
+                    <p className="mt-3 md:mt-4 text-xl md:text-2xl font-medium text-[#FFFFFF]">
+                      Connecting You to the Right Path.
+                    </p>
+
+                    {/* 3. The Body Text */}
+                    <p className="mt-5 max-w-xl text-base sm:text-lg font-normal leading-snug text-[#f0ebe1]">
                       Helping professionals find the right opportunities and helping employers connect with the right talent.
                     </p>
 
@@ -224,15 +236,15 @@ export default function Home() {
             >
               <img
                 src={IMAGES.techWorkspace}
-                alt="Indian corporate software professional working in modern USA high-tech office"
-                className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="Two Paths, One Purpose - Dedicated Candidate and Employer Alignment"
+                className="w-full h-auto aspect-[3/2] sm:aspect-auto sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-[#011330]/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 p-5 rounded-lg bg-[#011330]/90 backdrop-blur-md border border-[#BA780E]/30 text-[#f8f4ec]">
                 <p className="text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                   Our Commitment
                 </p>
-                <p className="serif text-lg font-medium text-[#f8f4ec] mt-1 uppercase tracking-wide">
+                <p className="serif text-sm sm:text-base font-medium text-[#f8f4ec] mt-1 uppercase tracking-wide">
                   1:1 Recruiter Attention · Zero Hidden Placement Fees
                 </p>
               </div>
@@ -241,25 +253,25 @@ export default function Home() {
 
           <div className="lg:col-span-7">
             <ScrollReveal delay={0.1}>
-              <h2 className="serif text-3xl font-bold leading-[1.15] tracking-wide text-[#011330] sm:text-4xl md:text-5xl uppercase">
+              <h2 className="serif text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider text-[#011330] uppercase">
                 Built Around People. Focused on the Right Opportunities.
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#5d6971]">
+              <p className="mt-5 max-w-xl text-sm sm:text-base leading-7 text-[#5d6971]">
                 Whether you are building your career or building your team, our work begins with
                 listening and ends with a more considered connection.
               </p>
 
-              <div className="mt-10 grid gap-6 border-t border-[#d9d1c3] pt-8 sm:grid-cols-2">
+              <div className="mt-8 grid gap-6 border-t border-[#d9d1c3] pt-6 sm:grid-cols-2">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -2 }}
                   transition={{ duration: 0.25 }}
-                  className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
+                  className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-5 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For candidates</p>
-                  <h3 className="serif mt-2 text-2xl font-bold text-[#011330] uppercase tracking-wide">
+                  <h3 className="serif mt-2 text-sm sm:text-base font-semibold leading-snug tracking-wider text-[#011330] uppercase">
                     Looking for Your Next Opportunity?
                   </h3>
-                  <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
+                  <ul className="mt-3.5 space-y-2 text-xs sm:text-sm leading-6 text-[#5d6971]">
                     <li className="flex items-start gap-2">
                       <span className="text-[#BA780E] font-bold">✓</span>
                       <span>Dedicated 1:1 recruiter support Monday through Friday.</span>
@@ -276,11 +288,11 @@ export default function Home() {
                   <Link
                     href="/careers"
                     data-testid="link-home-candidate-path"
-                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+                    className="group mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
                   >
                     Explore opportunities{" "}
                     <ArrowRight
-                      size={16}
+                      size={15}
                       className="text-[#BA780E] transition-transform group-hover:translate-x-1"
                     />
                   </Link>
@@ -289,13 +301,13 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -2 }}
                   transition={{ duration: 0.25 }}
-                  className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
+                  className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-5 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For employers</p>
-                  <h3 className="serif mt-2 text-2xl font-bold text-[#011330] uppercase tracking-wide">
+                  <h3 className="serif mt-2 text-sm sm:text-base font-semibold leading-snug tracking-wider text-[#011330] uppercase">
                     Looking for the Right Talent?
                   </h3>
-                  <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
+                  <ul className="mt-3.5 space-y-2 text-xs sm:text-sm leading-6 text-[#5d6971]">
                     <li className="flex items-start gap-2">
                       <span className="text-[#BA780E] font-bold">✓</span>
                       <span>Pre-screened candidates matching precise skill requirements.</span>
@@ -312,11 +324,11 @@ export default function Home() {
                   <Link
                     href="/services"
                     data-testid="link-home-employer-path"
-                    className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+                    className="group mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
                   >
                     Hire the right talent{" "}
                     <ArrowRight
-                      size={16}
+                      size={15}
                       className="text-[#BA780E] transition-transform group-hover:translate-x-1"
                     />
                   </Link>
@@ -328,23 +340,23 @@ export default function Home() {
       </section>
 
       {/* 3. SERVICES OVERVIEW */}
-      <section className="section-slide container-wide border-t border-[#ded6c7] py-16 md:py-24">
+      <section className="section-slide container-wide border-t border-[#ded6c7] py-14 md:py-20">
         <ScrollReveal>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <SectionLabel>Our services</SectionLabel>
-              <h2 className="serif mt-4 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
+              <h2 className="serif mt-2 max-w-2xl text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider text-[#011330] uppercase">
                 Recruitment Support That Moves Careers Forward
               </h2>
             </div>
             <Link
               href="/services"
               data-testid="link-home-services"
-              className="group inline-flex items-center gap-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
+              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
             >
               Explore all services{" "}
               <ArrowRight
-                size={16}
+                size={15}
                 className="text-[#BA780E] transition-transform group-hover:translate-x-1"
               />
             </Link>
@@ -356,7 +368,7 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-12 grid gap-x-12 gap-y-0 border-t border-[#d9d1c3] md:grid-cols-2"
+          className="mt-10 grid gap-x-12 gap-y-0 border-t border-[#d9d1c3] md:grid-cols-2"
         >
           {services.map(([title, copy], index) => (
             <motion.div
@@ -364,12 +376,12 @@ export default function Home() {
               variants={staggerChild}
               whileHover={{ x: 6 }}
               transition={{ duration: 0.25 }}
-              className="grid grid-cols-[48px_1fr] gap-5 border-b border-[#d9d1c3] py-8 transition-colors hover:bg-[#fbf9f5] px-3 rounded-lg"
+              className="grid grid-cols-[48px_1fr] gap-5 border-b border-[#d9d1c3] py-7 transition-colors hover:bg-[#fbf9f5] px-3 rounded-lg"
             >
-              <span className="serif text-3xl text-[#BA780E] font-bold">0{index + 1}</span>
+              <span className="serif text-2xl sm:text-3xl text-[#BA780E] font-bold">0{index + 1}</span>
               <div>
-                <h3 className="font-bold text-[#011330] text-lg uppercase tracking-wide">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[#69747b]">{copy}</p>
+                <h3 className="font-semibold text-[#011330] text-xs sm:text-sm uppercase tracking-wider">{title}</h3>
+                <p className="mt-1.5 text-xs sm:text-sm leading-6 text-[#69747b]">{copy}</p>
               </div>
             </motion.div>
           ))}
@@ -377,13 +389,13 @@ export default function Home() {
       </section>
 
       {/* 4. CONDENSED HORIZONTAL HOW WE WORK */}
-      <section className="section-slide-compact bg-[#f7f4ed] border-y border-[#ded6c7] py-16 md:py-20">
+      <section className="section-slide-compact bg-[#f7f4ed] border-y border-[#ded6c7] py-14 md:py-18">
         <div className="container-wide">
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <SectionLabel>A more human approach to recruitment</SectionLabel>
-                <h2 className="serif mt-3 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
+                <h2 className="serif mt-2 max-w-2xl text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider text-[#011330] uppercase">
                   How we work
                 </h2>
               </div>
@@ -398,7 +410,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
           >
             {[
               ["01", "Understand", "We take the time to understand your goals, skills, experience, and requirements."],
@@ -411,17 +423,17 @@ export default function Home() {
                 variants={staggerChild}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="relative rounded-xl border border-[#ded6c7] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-md transition-all flex flex-col justify-between"
+                className="relative rounded-xl border border-[#ded6c7] bg-[#fbf9f5] p-5 shadow-sm hover:border-[#BA780E] hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between border-b border-[#ded6c7]/60 pb-3 mb-4">
-                    <span className="serif text-3xl font-semibold text-[#BA780E]">{num}</span>
-                    <span className="text-[.68rem] font-bold uppercase tracking-wider text-[#8a969f]">
+                  <div className="flex items-center justify-between border-b border-[#ded6c7]/60 pb-3 mb-3.5">
+                    <span className="serif text-2xl font-semibold text-[#BA780E]">{num}</span>
+                    <span className="text-[.66rem] font-bold uppercase tracking-wider text-[#8a969f]">
                       Step {index + 1}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#011330]">{title}</h3>
-                  <p className="mt-2 text-xs sm:text-sm leading-6 text-[#69747b]">{copy}</p>
+                  <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#011330]">{title}</h3>
+                  <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-[#69747b]">{copy}</p>
                 </div>
               </motion.div>
             ))}
@@ -430,14 +442,14 @@ export default function Home() {
       </section>
 
       {/* 8. NO COMMISSION FROM YOUR JOB */}
-      <section className="section-slide bg-[#011330] text-[#f8f4ec] py-20 md:py-28 relative overflow-hidden">
+      <section className="section-slide bg-[#011330] text-[#f8f4ec] py-16 md:py-24 relative overflow-hidden">
         <div className="container-wide grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <ScrollReveal>
             <SectionLabel light>No commission from your job</SectionLabel>
-            <h2 className="serif mt-5 max-w-xl text-3xl font-bold leading-tight text-[#f8f4ec] sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide">
+            <h2 className="serif mt-3 max-w-xl text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-wider text-[#f8f4ec] uppercase">
               Your success belongs to you.
             </h2>
-            <ul className="mt-6 max-w-xl text-base leading-7 text-[#c4cdd1] space-y-3">
+            <ul className="mt-5 max-w-xl text-sm sm:text-base leading-7 text-[#c4cdd1] space-y-3">
               <li className="flex items-start gap-3">
                 <CheckCircle2 size={18} className="text-[#BA780E] shrink-0 mt-1" />
                 <span>
@@ -457,13 +469,13 @@ export default function Home() {
                 </span>
               </li>
             </ul>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block mt-8">
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block mt-7">
               <Link
                 href="/contact"
                 data-testid="link-home-trust-contact"
-                className="inline-flex items-center gap-3 bg-[#BA780E] px-6 py-4 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#011330] transition-all hover:bg-[#BA780E] shadow-lg"
+                className="inline-flex items-center gap-2.5 bg-[#BA780E] px-6 py-3.5 text-[.74rem] font-bold uppercase tracking-[.14em] text-[#011330] transition-all hover:bg-[#BA780E] shadow-lg"
               >
-                Talk to our team <ArrowRight size={16} />
+                Talk to our team <ArrowRight size={15} />
               </Link>
             </motion.div>
           </ScrollReveal>
@@ -472,24 +484,24 @@ export default function Home() {
             <motion.div
               whileHover={{ scale: 1.015 }}
               transition={{ duration: 0.35 }}
-              className="relative overflow-hidden rounded-xl border border-[#BA780E]/40 shadow-2xl group"
+              className="relative overflow-hidden rounded-xl border border-[#BA780E]/40 shadow-2xl group bg-[#011330]"
             >
               <img
                 src={IMAGES.executiveConsulting}
-                alt="Indian business consultant and career advisor in modern USA corporate office"
-                className="h-[420px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="Your Success Belongs To You - 0% Commission Policy"
+                className="w-full h-auto aspect-[16/9] object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
-            <div className="absolute -bottom-6 -right-4 sm:-bottom-6 sm:-right-6 rounded-xl border border-[#BA780E]/40 bg-[#011330]/95 p-6 text-[#f8f4ec] shadow-2xl backdrop-blur-md max-w-xs">
+            <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 rounded-xl border border-[#BA780E]/40 bg-[#011330]/95 p-4 sm:p-6 text-[#f8f4ec] shadow-2xl backdrop-blur-md max-w-sm sm:max-w-xs">
               <div className="flex items-center gap-3">
-                <CheckCircle2 size={26} className="text-[#BA780E] shrink-0" />
+                <CheckCircle2 size={24} className="text-[#BA780E] shrink-0" />
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#BA780E]">
+                  <p className="text-[.7rem] sm:text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                     Transparent Policy
                   </p>
-                  <p className="text-sm font-semibold text-[#f8f4ec]">
+                  <p className="text-xs sm:text-sm font-semibold text-[#f8f4ec]">
                     0% Salary Cut · Keep 100% of Your Earnings
                   </p>
                 </div>
@@ -500,14 +512,14 @@ export default function Home() {
       </section>
 
       {/* 9. LAUNCH SPECIAL */}
-      <section className="section-slide-compact container-wide border-b border-[#ded6c7] py-20 md:py-24">
+      <section className="section-slide-compact container-wide border-b border-[#ded6c7] py-16 md:py-20">
         <div className="grid gap-10 lg:grid-cols-12 items-center">
           <ScrollReveal className="lg:col-span-6">
             <SectionLabel>Launch special</SectionLabel>
-            <h2 className="serif mt-4 text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
+            <h2 className="serif mt-2 text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider text-[#011330] uppercase">
               We're celebrating our launch with special pricing!
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#69747b]">
+            <p className="mt-3.5 text-xs sm:text-sm leading-6 text-[#69747b]">
               Get comprehensive career navigation, dedicated recruiter matching, and personalized
               guidance at our introductory rate.
             </p>
@@ -517,23 +529,23 @@ export default function Home() {
             <motion.div
               whileHover={{ scale: 1.02, y: -2 }}
               transition={{ duration: 0.3 }}
-              className="flex flex-col justify-center rounded-2xl border border-[#BA780E]/40 bg-[#fbf9f5] p-8 sm:p-10 shadow-xl"
+              className="flex flex-col justify-center rounded-2xl border border-[#BA780E]/40 bg-[#fbf9f5] p-7 sm:p-9 shadow-xl"
             >
               <div className="flex items-baseline gap-4">
-                <span className="text-3xl text-[#98a0a4] line-through font-semibold">$299</span>
-                <span className="text-6xl md:text-7xl font-bold leading-none text-[#011330] tracking-tight">
+                <span className="text-2xl sm:text-3xl text-[#98a0a4] line-through font-semibold">$299</span>
+                <span className="text-5xl md:text-6xl font-bold leading-none text-[#011330] tracking-tight">
                   $199
                 </span>
-                <span className="inline-flex items-center rounded-full bg-[#BA780E]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#BA780E]">
+                <span className="inline-flex items-center rounded-full bg-[#BA780E]/15 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                   Save $100
                 </span>
               </div>
-              <p className="mt-3 text-xs text-[#69747b] uppercase tracking-wider font-medium">
+              <p className="mt-2.5 text-xs text-[#69747b] uppercase tracking-wider font-medium">
                 Offer valid through December 2026 · Limited availability
               </p>
 
               {/* Exact Bullet Points */}
-              <ul className="mt-6 space-y-3.5 border-t border-[#ded6c7] pt-6 text-sm font-medium text-[#011330]">
+              <ul className="mt-5 space-y-3 border-t border-[#ded6c7] pt-5 text-xs sm:text-sm font-medium text-[#011330]">
                 {[
                   "Dedicated 1:1 Recruiter Support",
                   "Targeted Job Search & Applications",
@@ -541,20 +553,20 @@ export default function Home() {
                   "No Post-Placement Commission",
                   "No Hidden Fees & Charges",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-[#BA780E] shrink-0" />
+                  <li key={item} className="flex items-center gap-2.5">
+                    <CheckCircle2 size={16} className="text-[#BA780E] shrink-0" />
                     <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-8">
+              <div className="mt-7">
                 <Link
                   href="/contact"
                   data-testid="link-home-launch"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 text-sm sm:text-base font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl active:scale-[0.99]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-5 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl active:scale-[0.99]"
                 >
-                  Get Started <ArrowRight size={18} />
+                  Get Started <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
@@ -563,11 +575,11 @@ export default function Home() {
       </section>
 
       {/* 10. FINAL CTA BANNER */}
-      <section className="bg-[#e8dfd0] py-20 md:py-24">
+      <section className="bg-[#e8dfd0] py-16 md:py-20">
         <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <ScrollReveal>
             <SectionLabel>Take the next step</SectionLabel>
-            <h2 className="serif mt-4 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
+            <h2 className="serif mt-2 max-w-2xl text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-wider text-[#011330] uppercase">
               Your Next Opportunity Could Be the Right One.
             </h2>
             <p className="mt-4 max-w-xl leading-7 text-[#5d6971]">
