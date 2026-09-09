@@ -446,7 +446,7 @@ export default function Home() {
         <div className="container-wide grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <ScrollReveal>
             <SectionLabel light>No commission from your job</SectionLabel>
-            <h2 className="serif mt-3 max-w-xl text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-wider text-[#f8f4ec] uppercase">
+            <h2 className="serif mt-3 max-w-xl text-[0.95rem] sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-normal sm:tracking-wider text-[#f8f4ec] uppercase whitespace-nowrap sm:whitespace-normal">
               Your success belongs to you.
             </h2>
             <ul className="mt-5 max-w-xl text-sm sm:text-base leading-7 text-[#c4cdd1] space-y-3">
