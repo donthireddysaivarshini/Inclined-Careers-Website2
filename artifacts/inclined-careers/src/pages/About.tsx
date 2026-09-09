@@ -18,9 +18,9 @@ export default function About() {
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight uppercase tracking-wide text-[#011330]">
               Connecting people, opportunities, and organizations to the{" "}
-              <em className="font-medium text-[#BA780E]">right path.</em>
+              <span className="text-[#BA780E]">right path.</span>
             </h1>
           </ScrollReveal>
         </div>
@@ -38,7 +38,7 @@ export default function About() {
             >
               <div className="p-7 sm:p-9 relative z-10">
                 <SectionLabel>The Mission</SectionLabel>
-                <h2 className="serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-[#011330] mt-3">
+                <h2 className="serif text-2xl sm:text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide text-[#011330] mt-3">
                   A Career Is More Than Just A Job.
                 </h2>
                 <p className="mt-4 text-sm sm:text-base leading-relaxed text-[#5d6971] max-w-xl">
@@ -53,7 +53,7 @@ export default function About() {
               <div className="relative h-56 sm:h-64 w-full overflow-hidden border-t border-[#ded6c7]/60">
                 <img
                   src={IMAGES.teamCollaboration}
-                  alt="Modern executive consulting team collaborating"
+                  alt="Indian professionals collaborating in modern USA corporate office"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/65 via-transparent to-transparent" />
@@ -74,7 +74,7 @@ export default function About() {
                   </span>
                   <span className="serif text-xl font-bold text-[#BA780E]">02</span>
                 </div>
-                <h3 className="serif text-2xl sm:text-3xl font-semibold text-[#f8f4ec] mt-6">
+                <h3 className="serif text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#f8f4ec] mt-6">
                   Real 1:1 Support
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#c4cdd1]">
@@ -98,7 +98,7 @@ export default function About() {
                   <span className="eyebrow text-[#BA780E]">Specialized Advisory</span>
                   <span className="serif text-xl font-semibold text-[#BA780E]">03</span>
                 </div>
-                <h3 className="serif text-2xl sm:text-3xl font-semibold text-[#011330] mt-4">
+                <h3 className="serif text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#011330] mt-4">
                   Navigating US Careers
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5d6971]">
@@ -128,7 +128,7 @@ export default function About() {
 
                 <div className="mt-6 grid gap-6 md:grid-cols-[1.3fr_1fr] items-center">
                   <div>
-                    <h3 className="serif text-2xl sm:text-3xl font-semibold text-[#f8f4ec]">
+                    <h3 className="serif text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#f8f4ec]">
                       The Zero Commission Promise
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-[#c4cdd1]">

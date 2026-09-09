@@ -56,10 +56,10 @@ export default function Home() {
               <span>Career &amp; Recruitment Support</span>
             </div>
 
-            <h1 className="serif text-3xl font-semibold leading-[1.14] tracking-[-.02em] text-[#f8f4ec]">
+            <h1 className="serif text-3xl font-bold leading-[1.14] tracking-wider text-[#f8f4ec] uppercase">
               Connecting you to the
               <br />
-              <em className="font-medium text-[#BA780E]">Right Path.</em>
+              <span className="font-bold text-[#BA780E]">Right Path.</span>
             </h1>
 
             <p className="mt-3.5 text-sm font-medium leading-relaxed text-[#f0ebe1]">
@@ -137,10 +137,10 @@ export default function Home() {
                       <span>Inclined Careers · Career &amp; Recruitment Support</span>
                     </div>
 
-                    <h1 className="serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.12] tracking-[-.025em] text-[#f8f4ec]">
+                    <h1 className="serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-wider text-[#f8f4ec] uppercase">
                       Connecting you to the
                       <br />
-                      <em className="font-medium text-[#BA780E]">Right Path.</em>
+                      <span className="font-bold text-[#BA780E]">Right Path.</span>
                     </h1>
 
                     <p className="mt-4 max-w-xl text-base sm:text-lg font-medium leading-snug text-[#f0ebe1]">
@@ -224,7 +224,7 @@ export default function Home() {
             >
               <img
                 src={IMAGES.techWorkspace}
-                alt="Contemporary executive workplace and talent advisory office"
+                alt="Indian corporate software professional working in modern USA high-tech office"
                 className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-[#011330]/20 to-transparent" />
@@ -232,7 +232,7 @@ export default function Home() {
                 <p className="text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                   Our Commitment
                 </p>
-                <p className="serif text-lg font-medium text-[#f8f4ec] mt-1">
+                <p className="serif text-lg font-medium text-[#f8f4ec] mt-1 uppercase tracking-wide">
                   1:1 Recruiter Attention · Zero Hidden Placement Fees
                 </p>
               </div>
@@ -241,7 +241,7 @@ export default function Home() {
 
           <div className="lg:col-span-7">
             <ScrollReveal delay={0.1}>
-              <h2 className="serif text-3xl font-semibold leading-[1.15] tracking-[-.025em] text-[#011330] sm:text-4xl md:text-5xl">
+              <h2 className="serif text-3xl font-bold leading-[1.15] tracking-wide text-[#011330] sm:text-4xl md:text-5xl uppercase">
                 Built Around People. Focused on the Right Opportunities.
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-[#5d6971]">
@@ -256,7 +256,7 @@ export default function Home() {
                   className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For candidates</p>
-                  <h3 className="serif mt-2 text-2xl font-semibold text-[#011330]">
+                  <h3 className="serif mt-2 text-2xl font-bold text-[#011330] uppercase tracking-wide">
                     Looking for Your Next Opportunity?
                   </h3>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
@@ -292,7 +292,7 @@ export default function Home() {
                   className="rounded-xl border border-[#d9d1c3] bg-[#fbf9f5] p-6 shadow-sm hover:border-[#BA780E] hover:shadow-lg transition-all"
                 >
                   <p className="eyebrow text-[#BA780E]">For employers</p>
-                  <h3 className="serif mt-2 text-2xl font-semibold text-[#011330]">
+                  <h3 className="serif mt-2 text-2xl font-bold text-[#011330] uppercase tracking-wide">
                     Looking for the Right Talent?
                   </h3>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d6971]">
@@ -333,7 +333,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <SectionLabel>Our services</SectionLabel>
-              <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+              <h2 className="serif mt-4 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
                 Recruitment Support That Moves Careers Forward
               </h2>
             </div>
@@ -366,9 +366,9 @@ export default function Home() {
               transition={{ duration: 0.25 }}
               className="grid grid-cols-[48px_1fr] gap-5 border-b border-[#d9d1c3] py-8 transition-colors hover:bg-[#fbf9f5] px-3 rounded-lg"
             >
-              <span className="serif text-3xl text-[#BA780E] font-semibold">0{index + 1}</span>
+              <span className="serif text-3xl text-[#BA780E] font-bold">0{index + 1}</span>
               <div>
-                <h3 className="font-bold text-[#011330] text-lg">{title}</h3>
+                <h3 className="font-bold text-[#011330] text-lg uppercase tracking-wide">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[#69747b]">{copy}</p>
               </div>
             </motion.div>
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <SectionLabel>A more human approach to recruitment</SectionLabel>
-                <h2 className="serif mt-3 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+                <h2 className="serif mt-3 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
                   How we work
                 </h2>
               </div>
@@ -434,7 +434,7 @@ export default function Home() {
         <div className="container-wide grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <ScrollReveal>
             <SectionLabel light>No commission from your job</SectionLabel>
-            <h2 className="serif mt-5 max-w-xl text-3xl font-semibold leading-tight text-[#f8f4ec] sm:text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="serif mt-5 max-w-xl text-3xl font-bold leading-tight text-[#f8f4ec] sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide">
               Your success belongs to you.
             </h2>
             <ul className="mt-6 max-w-xl text-base leading-7 text-[#c4cdd1] space-y-3">
@@ -476,7 +476,7 @@ export default function Home() {
             >
               <img
                 src={IMAGES.executiveConsulting}
-                alt="Executive consultant in sunlit corporate office"
+                alt="Indian business consultant and career advisor in modern USA corporate office"
                 className="h-[420px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#011330]/80 via-transparent to-transparent" />
@@ -504,7 +504,7 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-12 items-center">
           <ScrollReveal className="lg:col-span-6">
             <SectionLabel>Launch special</SectionLabel>
-            <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+            <h2 className="serif mt-4 text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
               We're celebrating our launch with special pricing!
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#69747b]">
@@ -517,31 +517,46 @@ export default function Home() {
             <motion.div
               whileHover={{ scale: 1.02, y: -2 }}
               transition={{ duration: 0.3 }}
-              className="flex flex-col justify-center rounded-2xl border border-[#BA780E]/40 bg-[#fbf9f5] p-8 shadow-xl"
+              className="flex flex-col justify-center rounded-2xl border border-[#BA780E]/40 bg-[#fbf9f5] p-8 sm:p-10 shadow-xl"
             >
               <div className="flex items-baseline gap-4">
-                <span className="serif text-3xl text-[#98a0a4] line-through">$299</span>
-                <span className="serif text-6xl md:text-7xl font-semibold leading-none text-[#011330]">
+                <span className="text-3xl text-[#98a0a4] line-through font-semibold">$299</span>
+                <span className="text-6xl md:text-7xl font-bold leading-none text-[#011330] tracking-tight">
                   $199
                 </span>
-                <span className="inline-flex items-center rounded-full bg-[#e8dfd0] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#BA780E]">
+                <span className="inline-flex items-center rounded-full bg-[#BA780E]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#BA780E]">
                   Save $100
                 </span>
               </div>
-              <p className="mt-4 text-xs text-[#69747b] uppercase tracking-wider">
+              <p className="mt-3 text-xs text-[#69747b] uppercase tracking-wider font-medium">
                 Offer valid through December 2026 · Limited availability
               </p>
-              <Link
-                href="/contact"
-                data-testid="link-home-launch"
-                className="group mt-6 inline-flex w-fit items-center gap-3 border-b-2 border-[#BA780E] pb-2 text-sm font-bold text-[#011330] transition-colors hover:text-[#BA780E]"
-              >
-                Get started with special launch rate{" "}
-                <ArrowRight
-                  size={16}
-                  className="text-[#BA780E] transition-transform group-hover:translate-x-1"
-                />
-              </Link>
+
+              {/* Exact Bullet Points */}
+              <ul className="mt-6 space-y-3.5 border-t border-[#ded6c7] pt-6 text-sm font-medium text-[#011330]">
+                {[
+                  "Dedicated 1:1 Recruiter Support",
+                  "Targeted Job Search & Applications",
+                  "Resume Support Based on Each Role",
+                  "No Post-Placement Commission",
+                  "No Hidden Fees & Charges",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckCircle2 size={18} className="text-[#BA780E] shrink-0" />
+                    <span className="leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8">
+                <Link
+                  href="/contact"
+                  data-testid="link-home-launch"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 text-sm sm:text-base font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl active:scale-[0.99]"
+                >
+                  Get Started <ArrowRight size={18} />
+                </Link>
+              </div>
             </motion.div>
           </ScrollReveal>
         </div>
@@ -552,7 +567,7 @@ export default function Home() {
         <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <ScrollReveal>
             <SectionLabel>Take the next step</SectionLabel>
-            <h2 className="serif mt-4 max-w-2xl text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl md:text-5xl">
+            <h2 className="serif mt-4 max-w-2xl text-3xl font-bold leading-tight text-[#011330] sm:text-4xl md:text-5xl uppercase tracking-wide">
               Your Next Opportunity Could Be the Right One.
             </h2>
             <p className="mt-4 max-w-xl leading-7 text-[#5d6971]">

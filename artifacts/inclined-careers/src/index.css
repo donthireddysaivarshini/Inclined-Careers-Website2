@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -30,6 +30,7 @@
   --color-destructive-foreground: hsl(var(--destructive-foreground));
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
+  --font-heading: var(--app-font-heading);
   --font-mono: var(--app-font-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -71,8 +72,9 @@
   --chart-3: 21 36% 59%;
   --chart-4: 165 24% 45%;
   --chart-5: 8 33% 60%;
-  --app-font-sans: 'DM Sans', sans-serif;
-  --app-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --app-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --app-font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --app-font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --app-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --radius: 0.7rem;
   --primary-border: hsl(var(--primary));
@@ -121,7 +123,12 @@
 
 @layer utilities {
   .container-wide { width: min(100% - 3rem, 1240px); margin-inline: auto; }
-  .serif { font-family: var(--app-font-serif); }
+  .serif {
+    font-family: var(--app-font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+  .font-heading { font-family: var(--app-font-heading); }
   .eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .68rem; font-weight: 700; }
   .text-balance { text-wrap: balance; }
   .paper-grid {

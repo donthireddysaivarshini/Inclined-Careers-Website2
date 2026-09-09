@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Heart, Instagram, Linkedin, Mail, Phone, ShieldCheck } from "lucide-react";
+import { Facebook, Heart, Instagram, Linkedin, Mail, Phone, ShieldCheck } from "lucide-react";
 import { navItems } from "@/constants/navigation";
 import { Logo } from "./Logo";
 
@@ -49,6 +49,16 @@ export function Footer() {
             </a>
             <span className="text-[#b9c1c6]">Hyderabad, India</span>
             <div className="mt-3 flex gap-4">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                data-testid="link-facebook"
+                className="transition-colors hover:text-[#BA780E]"
+              >
+                <Facebook size={18} />
+              </a>
               <a
                 href="https://www.instagram.com/inclinedcareers?igsi=eWZvenZ6bHFtaXA5"
                 target="_blank"

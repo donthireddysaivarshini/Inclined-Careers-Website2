@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Clock, Loader2, Mail, Phone } from "lucide-react";
+import { ArrowRight, Award, Loader2, Mail, Phone } from "lucide-react";
 import { useSendEnquiry } from "@workspace/api-client-react";
 import { Meta } from "@/components/shared/Meta";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -38,31 +38,27 @@ export default function Contact() {
     event.preventDefault();
     setFeedback("");
     const currentName = form.fullName;
-    const currentInterest = form.areaOfInterest || (audience === "Employer" ? "Talent Acquisition" : "Career Opportunities");
+    const currentInterest = form.areaOfInterest || (audience === "Candidate" ? "Career Advisory" : "Talent Search");
 
     sendEnquiry.mutate(
       {
         data: {
           ...form,
-          audience,
-          companyName: audience === "Employer" ? form.companyName : null,
+          type: audience,
+          areaOfInterest: currentInterest,
         },
       },
       {
         onSuccess: () => {
-          setFeedback("success");
-          setFeedbackText("Thank you for reaching out. Our team will get back to you soon.");
           setSubmittedInfo({ name: currentName, interest: currentInterest });
-          // Reset form fields back to default empty state
+          // Reset form fields back to default
           setForm(INITIAL_FORM_STATE);
-          // Show dedicated Thank You Popup modal
+          // Trigger dedicated Thank You Modal Popup
           setShowThankYou(true);
         },
         onError: () => {
           setFeedback("error");
-          setFeedbackText(
-            "Something went wrong while sending your enquiry. Please try again or contact us directly."
-          );
+          setFeedbackText("We could not submit your enquiry right now. Please try again.");
         },
       }
     );
@@ -71,16 +67,16 @@ export default function Contact() {
   return (
     <main>
       <Meta
-        title="Contact Inclined Careers | Recruitment & Career Support"
-        description="Contact Inclined Careers for career opportunities, recruitment support, or employer talent needs."
+        title="Contact Us | Inclined Careers"
+        description="Connect with the team at Inclined Careers. Whether you're seeking your next opportunity or hiring talent, our advisors are here to help."
       />
 
-      {/* CONTACT HERO - Minimalist, Compact, Centered */}
+      {/* HERO BANNER */}
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-[-.025em] text-[#011330]">
-              Let's find the <em className="font-medium text-[#BA780E]">right path.</em>
+            <h1 className="serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight uppercase tracking-wide text-[#011330]">
+              Let's Find The <span className="text-[#BA780E]">Right Path.</span>
             </h1>
             <p className="mt-3.5 max-w-xl mx-auto text-sm md:text-base text-[#5d6971]">
               Whether you're looking for your next opportunity or searching for the right talent, our team is here to help.
@@ -95,8 +91,8 @@ export default function Contact() {
           <ScrollReveal className="space-y-8">
             <div>
               <SectionLabel>Let's connect</SectionLabel>
-              <h2 className="serif mt-4 text-3xl font-semibold leading-tight text-[#011330] sm:text-4xl">
-                We're Here to Help You Navigate Forward
+              <h2 className="serif mt-4 text-3xl font-bold leading-tight uppercase tracking-wide text-[#011330] sm:text-4xl">
+                We're Here To Help You Navigate Forward
               </h2>
               <p className="mt-4 text-sm leading-7 text-[#5d6971]">
                 Reach out to speak with an advisor. We'll connect you with the appropriate recruiter
@@ -125,12 +121,6 @@ export default function Contact() {
                 </div>
                 info@inclinedcareers.in
               </a>
-              <div className="flex items-center gap-3 text-sm text-[#5d6971]">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8dfd0] text-[#BA780E]">
-                  <Clock size={16} />
-                </div>
-                <span>Mon–Fri: 9:00 AM – 6:00 PM IST</span>
-              </div>
               <div className="flex items-center gap-3 text-sm text-[#5d6971]">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8dfd0] text-[#BA780E]">
                   <Award size={16} />

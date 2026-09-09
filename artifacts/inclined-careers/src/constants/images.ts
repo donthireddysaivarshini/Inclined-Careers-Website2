@@ -1,23 +1,23 @@
 export const imageUrl = (file: string) => `${import.meta.env.BASE_URL}images/${file}`;
 
-// Premium, bright, authentic Unsplash imagery curated for a high-end US consulting & recruitment firm
+// Curated high-resolution imagery specifically featuring Indian and South Asian professionals working in USA corporate office environments
 export const IMAGES = {
-  // Modern glass office executive boardroom (bright, modern architecture)
-  glassOfficeMeeting: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
-  // Candid corporate discussion with laptops in sunlit modern office
-  candidDiscussion: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=85",
-  // Premium modern tech workspace with collaborative architecture
-  techWorkspace: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85",
-  // Executive consulting & career advisory in bright office
-  executiveConsulting: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=1600&q=85",
-  // Corporate glass skyline headquarters (crisp architectural perspective)
+  // Indian corporate software professional working in modern USA high-tech office
+  techWorkspace: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=85",
+  // Indian corporate business consultant & career advisor in modern USA office
+  executiveConsulting: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1600&q=85",
+  // Indian professional executive leading collaborative corporate tech team in USA
+  teamCollaboration: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1600&q=85",
+  // Indian tech professionals in strategic boardroom conference meeting
+  conferenceStrategy: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=85",
+  // Indian business leader & executive advisor in corporate setting
+  talentAdvisory: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=85",
+  // Indian corporate professional analyzing strategic data in modern US office
+  candidDiscussion: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=1600&q=85",
+  // Corporate glass headquarters tower
   corporateHq: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
-  // Strategic presentation & talent review in conference room
-  talentAdvisory: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=85",
-  // Clean executive desk workspace with laptop and notebook
+  // Executive meeting in American tech corporate headquarters
+  glassOfficeMeeting: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=85",
+  // Clean executive workstation
   cleanWorkspace: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=85",
-  // Strategic discussion around conference table
-  conferenceStrategy: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=85",
-  // Bright modern collaboration
-  teamCollaboration: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=85",
 };
