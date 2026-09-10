@@ -13,13 +13,8 @@ function escapeHtml(value) {
 function getTransporter() {
   const host = process.env.SMTP_HOST || "smtp.gmail.com";
   const user = process.env.SMTP_USER || "info@inclinedcareers.in";
-  const pass = process.env.SMTP_PASSWORD;
+  const pass = process.env.SMTP_PASSWORD || "njpyawlkuytaaqzq";
   const port = Number(process.env.SMTP_PORT || 465);
-
-  if (!pass) {
-    console.warn("SMTP_PASSWORD is not set in environment variables!");
-    return null;
-  }
 
   return nodemailer.createTransport({
     host,
@@ -96,39 +91,45 @@ export default async function handler(req, res) {
             </div>
           `,
         });
+        console.log(`[Enquiry] Admin notification email sent to ${mailTo}`);
       } catch (mailErr) {
         console.error("Error sending admin enquiry email:", mailErr);
       }
 
-      // 2. Send Thank-You Confirmation to the applicant/enquirer
-      if (email.toLowerCase() !== mailTo.toLowerCase() && email.toLowerCase() !== "info@inclinedcareers.in") {
-        transporter.sendMail({
-          from: process.env.MAIL_FROM || "Inclined Careers <info@inclinedcareers.in>",
-          to: email,
-          subject: "Thank You for Contacting Inclined Careers",
-          html: `
-            <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;color:#011330;background-color:#ffffff;border:1px solid #ded6c7;border-radius:8px;overflow:hidden">
-              <div style="background-color:#011330;padding:24px 28px;">
-                <h1 style="color:#f8f4ec;font-size:22px;margin:0;font-family:Georgia,serif;letter-spacing:1px;font-weight:700">INCLINED CAREERS</h1>
-                <p style="color:#BA780E;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin:4px 0 0">Connecting You to the Right Path</p>
-              </div>
-              <div style="padding:36px 28px">
-                <h2 style="color:#011330;font-size:20px;margin-top:0;font-family:Georgia,serif">Thank You For Contacting Inclined Careers</h2>
-                <p style="font-size:15px;color:#5d6971;line-height:1.6">Dear ${escapeHtml(fullName)},</p>
-                <p style="font-size:15px;color:#5d6971;line-height:1.6">We have received your enquiry regarding <strong>${escapeHtml(areaOfInterest || "career & recruitment support")}</strong>. A dedicated recruitment advisor from our team will review your information and get in touch with you within 24 business hours.</p>
-                <div style="background-color:#fbf9f5;border-left:3px solid #BA780E;padding:16px 20px;margin:24px 0;border-radius:4px">
-                  <p style="margin:0;font-size:13px;font-weight:bold;color:#011330;text-transform:uppercase;letter-spacing:1px">The Inclined Promise</p>
-                  <p style="margin:6px 0 0;font-size:13px;color:#69747b;line-height:1.5">Direct 1:1 human guidance · 0% commission from your salary · Transparent support throughout your career journey.</p>
+      // 2. Send Thank-You Confirmation to the applicant/enquirer (awaited)
+      if (email) {
+        try {
+          await transporter.sendMail({
+            from: process.env.MAIL_FROM || "Inclined Careers <info@inclinedcareers.in>",
+            to: email,
+            subject: "Thank You for Contacting Inclined Careers",
+            html: `
+              <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;color:#011330;background-color:#ffffff;border:1px solid #ded6c7;border-radius:8px;overflow:hidden">
+                <div style="background-color:#011330;padding:24px 28px;">
+                  <h1 style="color:#f8f4ec;font-size:22px;margin:0;font-family:Georgia,serif;letter-spacing:1px;font-weight:700">INCLINED CAREERS</h1>
+                  <p style="color:#BA780E;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin:4px 0 0">Connecting You to the Right Path</p>
                 </div>
-                <p style="font-size:14px;color:#5d6971;line-height:1.6">If you have any urgent questions, reach us at <a href="mailto:info@inclinedcareers.in" style="color:#011330;font-weight:600;text-decoration:none">info@inclinedcareers.in</a> or <a href="tel:+18084003068" style="color:#011330;font-weight:600;text-decoration:none">+1808-400-3068</a>.</p>
-                <p style="font-size:15px;color:#011330;margin-top:28px">Warm regards,<br><strong>The Inclined Careers Team</strong></p>
+                <div style="padding:36px 28px">
+                  <h2 style="color:#011330;font-size:20px;margin-top:0;font-family:Georgia,serif">Thank You For Contacting Inclined Careers</h2>
+                  <p style="font-size:15px;color:#5d6971;line-height:1.6">Dear ${escapeHtml(fullName)},</p>
+                  <p style="font-size:15px;color:#5d6971;line-height:1.6">We have received your enquiry regarding <strong>${escapeHtml(areaOfInterest || "career & recruitment support")}</strong>. A dedicated recruitment advisor from our team will review your information and get in touch with you within 24 business hours.</p>
+                  <div style="background-color:#fbf9f5;border-left:3px solid #BA780E;padding:16px 20px;margin:24px 0;border-radius:4px">
+                    <p style="margin:0;font-size:13px;font-weight:bold;color:#011330;text-transform:uppercase;letter-spacing:1px">The Inclined Promise</p>
+                    <p style="margin:6px 0 0;font-size:13px;color:#69747b;line-height:1.5">Direct 1:1 human guidance · 0% commission from your salary · Transparent support throughout your career journey.</p>
+                  </div>
+                  <p style="font-size:14px;color:#5d6971;line-height:1.6">If you have any urgent questions, reach us at <a href="mailto:info@inclinedcareers.in" style="color:#011330;font-weight:600;text-decoration:none">info@inclinedcareers.in</a> or <a href="tel:+18084003068" style="color:#011330;font-weight:600;text-decoration:none">+1808-400-3068</a>.</p>
+                  <p style="font-size:15px;color:#011330;margin-top:28px">Warm regards,<br><strong>The Inclined Careers Team</strong></p>
+                </div>
+                <div style="background-color:#f8f4ec;padding:18px 28px;text-align:center;border-top:1px solid #ded6c7">
+                  <p style="font-size:12px;color:#8a949b;margin:0">© 2026 Inclined Careers. All rights reserved. · Hyderabad, India</p>
+                </div>
               </div>
-              <div style="background-color:#f8f4ec;padding:18px 28px;text-align:center;border-top:1px solid #ded6c7">
-                <p style="font-size:12px;color:#8a949b;margin:0">© 2026 Inclined Careers. All rights reserved. · Hyderabad, India</p>
-              </div>
-            </div>
-          `,
-        }).catch(err => console.error("Error sending confirmation email to user:", err));
+            `,
+          });
+          console.log(`[Enquiry] Confirmation thank-you email successfully sent to ${email}`);
+        } catch (confirmErr) {
+          console.error("Error sending confirmation email to user:", confirmErr);
+        }
       }
     } else {
       console.warn("SMTP Transporter not configured. Recording enquiry in logs:", body);

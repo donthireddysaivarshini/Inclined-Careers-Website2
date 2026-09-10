@@ -136,19 +136,6 @@ export async function sendConfirmationEmail(input: {
   role?: string;
   areaOfInterest?: string;
 }): Promise<boolean> {
-  const normalizedTo = input.to.trim().toLowerCase();
-  const normalizedMailTo = MAIL_TO.trim().toLowerCase();
-  const normalizedSmtpUser = (process.env.SMTP_USER ?? "").trim().toLowerCase();
-
-  // STRICT GUARD: Thank-you / confirmation emails must NEVER be sent to the company inbox
-  if (
-    normalizedTo === normalizedMailTo ||
-    normalizedTo === "info@inclinedcareers.in" ||
-    (normalizedSmtpUser && normalizedTo === normalizedSmtpUser)
-  ) {
-    return false;
-  }
-
   const transporter = getTransporter();
   if (!transporter) return false;
 

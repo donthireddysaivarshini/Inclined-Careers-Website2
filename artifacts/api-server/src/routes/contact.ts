@@ -56,15 +56,17 @@ router.post(
         req.log.warn("SMTP configuration is incomplete. Website enquiry recorded.");
       } else {
         // Send thank you confirmation email to the person who submitted the form
-        sendConfirmationEmail({
-          to: parsed.data.email,
-          recipientName: parsed.data.fullName,
-          type: "enquiry",
-          subject: "Thank You for Contacting Inclined Careers",
-          areaOfInterest: parsed.data.areaOfInterest,
-        }).catch((err) => {
+        try {
+          await sendConfirmationEmail({
+            to: parsed.data.email,
+            recipientName: parsed.data.fullName,
+            type: "enquiry",
+            subject: "Thank You for Contacting Inclined Careers",
+            areaOfInterest: parsed.data.areaOfInterest,
+          });
+        } catch (err) {
           req.log.warn({ err }, "Could not send confirmation email to enquiry sender");
-        });
+        }
       }
 
       res.json(
@@ -149,15 +151,17 @@ router.post(
         req.log.warn("SMTP configuration is incomplete. Career application recorded.");
       } else {
         // Send thank you confirmation email to the candidate
-        sendConfirmationEmail({
-          to: parsed.data.email,
-          recipientName: parsed.data.fullName,
-          type: "application",
-          subject: `Application Received - ${parsed.data.role} | Inclined Careers`,
-          role: parsed.data.role,
-        }).catch((err) => {
+        try {
+          await sendConfirmationEmail({
+            to: parsed.data.email,
+            recipientName: parsed.data.fullName,
+            type: "application",
+            subject: `Application Received - ${parsed.data.role} | Inclined Careers`,
+            role: parsed.data.role,
+          });
+        } catch (err) {
           req.log.warn({ err }, "Could not send confirmation email to applicant");
-        });
+        }
       }
 
       res.json(
