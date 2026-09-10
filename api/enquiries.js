@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { getLogoAttachment } from "./logoData.js";
 
 function escapeHtml(value) {
   if (!value) return "";
@@ -66,6 +67,8 @@ export default async function handler(req, res) {
     const mailTo = process.env.MAIL_TO || "info@inclinedcareers.in";
 
     if (transporter) {
+      const logoAttachment = getLogoAttachment();
+
       // 1. Send submission notification to info@inclinedcareers.in
       try {
         await transporter.sendMail({
@@ -75,8 +78,17 @@ export default async function handler(req, res) {
           html: `
             <div style="font-family:Arial,sans-serif;max-width:680px;color:#101828;background-color:#ffffff;border:1px solid #eaecf0;border-radius:8px;padding:24px;margin:0 auto">
               <div style="border-bottom:2px solid #BA780E;padding-bottom:16px;margin-bottom:24px">
-                <h2 style="color:#011330;margin:0">Inclined Careers</h2>
-                <p style="color:#667085;margin:4px 0 0">${escapeHtml(audience || "Website")} Enquiry</p>
+                <table style="width:100%;border-collapse:collapse;" role="presentation">
+                  <tr>
+                    <td style="width:52px;vertical-align:middle;">
+                      <img src="cid:inclined_logo" alt="Inclined Careers" width="48" height="48" style="width:48px;height:48px;border-radius:50%;display:block;border:1px solid #BA780E;object-fit:cover;" />
+                    </td>
+                    <td style="padding-left:14px;vertical-align:middle;text-align:left;">
+                      <h2 style="color:#011330;margin:0;font-size:20px;font-family:Georgia,serif;font-weight:700;">Inclined Careers</h2>
+                      <p style="color:#667085;margin:4px 0 0;font-size:13px;">${escapeHtml(audience || "Website")} Enquiry</p>
+                    </td>
+                  </tr>
+                </table>
               </div>
               <table style="border-collapse:collapse;width:100%;font-size:14px">
                 <tr><td style="padding:8px 16px 8px 0;color:#667085;font-weight:600;width:32%">Audience</td><td>${escapeHtml(audience || "Not specified")}</td></tr>
@@ -90,6 +102,7 @@ export default async function handler(req, res) {
               <p style="color:#667085;font-size:12px;margin-top:28px;border-top:1px solid #f2f4f7;padding-top:14px">Submitted ${escapeHtml(new Date().toISOString())}</p>
             </div>
           `,
+          attachments: [logoAttachment],
         });
         console.log(`[Enquiry] Admin notification email sent to ${mailTo}`);
       } catch (mailErr) {
@@ -105,9 +118,18 @@ export default async function handler(req, res) {
             subject: "Thank You for Contacting Inclined Careers",
             html: `
               <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;color:#011330;background-color:#ffffff;border:1px solid #ded6c7;border-radius:8px;overflow:hidden">
-                <div style="background-color:#011330;padding:24px 28px;">
-                  <h1 style="color:#f8f4ec;font-size:22px;margin:0;font-family:Georgia,serif;letter-spacing:1px;font-weight:700">INCLINED CAREERS</h1>
-                  <p style="color:#BA780E;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin:4px 0 0">Connecting You to the Right Path</p>
+                <div style="background-color:#011330;padding:22px 28px;">
+                  <table style="width:100%;border-collapse:collapse;" role="presentation">
+                    <tr>
+                      <td style="width:52px;vertical-align:middle;">
+                        <img src="cid:inclined_logo" alt="Inclined Careers" width="48" height="48" style="width:48px;height:48px;border-radius:50%;display:block;border:1px solid #BA780E;object-fit:cover;" />
+                      </td>
+                      <td style="padding-left:14px;vertical-align:middle;text-align:left;">
+                        <div style="color:#f8f4ec;font-size:22px;margin:0;font-family:Georgia,serif;letter-spacing:1px;font-weight:700;line-height:1.2;">INCLINED CAREERS</div>
+                        <div style="color:#BA780E;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin-top:4px;">Connecting You to the Right Path</div>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
                 <div style="padding:36px 28px">
                   <h2 style="color:#011330;font-size:20px;margin-top:0;font-family:Georgia,serif">Thank You For Contacting Inclined Careers</h2>
@@ -125,6 +147,7 @@ export default async function handler(req, res) {
                 </div>
               </div>
             `,
+            attachments: [logoAttachment],
           });
           console.log(`[Enquiry] Confirmation thank-you email successfully sent to ${email}`);
         } catch (confirmErr) {
