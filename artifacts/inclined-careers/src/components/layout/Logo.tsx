@@ -4,12 +4,18 @@ import { imageUrl } from "@/constants/images";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <Link href="/" className="group inline-flex items-center gap-3" data-testid="link-logo">
+    <Link
+      href="/"
+      className="group inline-flex items-center gap-3"
+      data-testid="link-logo"
+      title="Inclined Careers - Return to Homepage"
+      aria-label="Inclined Careers - Return to Homepage"
+    >
       <motion.img
         whileHover={{ scale: 1.08, rotate: 2 }}
         transition={{ duration: 0.3 }}
         src={imageUrl("logo.png")}
-        alt="Inclined Careers Logo"
+        alt="Inclined Careers - Connecting You to the Right Path"
         className="h-10 w-10 rounded-full object-contain ring-1 ring-[#BA780E]/60 shadow-sm"
       />
       <span

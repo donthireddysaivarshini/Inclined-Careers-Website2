@@ -11,8 +11,57 @@ export default function Services() {
   return (
     <main>
       <Meta
-        title="Recruitment & Staffing Services | Inclined Careers"
-        description="Explore talent acquisition, staffing, sourcing, screening, recruitment process support, and specialized recruitment services from Inclined Careers."
+        title="Recruitment & Staffing Solutions | Employer Services | Inclined Careers"
+        description="Custom recruitment and talent acquisition solutions for US employers. Expert talent sourcing, candidate screening, technical vetting, and flexible hiring models."
+        keywords="recruitment solutions, talent acquisition, US employer staffing, technical sourcing, candidate screening, healthcare staffing, IT talent hiring, contract staffing"
+        canonicalPath="/services"
+        breadcrumbs={[{ name: "Services", path: "/services" }]}
+        schema={{
+          "@type": "Service",
+          "@id": "https://inclinedcareers.in/services#service",
+          "name": "Recruitment & Staffing Solutions",
+          "provider": {
+            "@type": "Organization",
+            "name": "Inclined Careers",
+            "url": "https://inclinedcareers.in/"
+          },
+          "serviceType": "Recruitment & Talent Acquisition",
+          "description": "Comprehensive talent acquisition, candidate screening, and technical staffing solutions for US organizations.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Recruitment Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Talent Sourcing & Screening",
+                  "description": "Thoroughly vetted, day-one ready talent aligned with your exact technical and operational requirements."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Specialized IT & Technical Staffing",
+                  "description": "Direct hire and contract recruitment across cloud, infrastructure, software, and embedded systems."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Healthcare & Operations Recruitment",
+                  "description": "Targeted placement for critical healthcare administration, clinical systems, and operational roles."
+                }
+              }
+            ]
+          }
+        }}
       />
       {/* SERVICES HERO SECTION - Minimalist, Compact, Centered */}
       <section className="relative overflow-hidden paper-grid border-b border-[#ded6c7] bg-[#f3eee4] px-6 py-10 md:py-14 text-center">

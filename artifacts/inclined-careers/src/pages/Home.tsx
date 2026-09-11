@@ -42,8 +42,37 @@ export default function Home() {
   return (
     <main>
       <Meta
-        title="Inclined Careers | Connecting You to the Right Path"
-        description="Inclined Careers connects professionals with career opportunities and helps employers connect with qualified talent across technology, healthcare, data center operations, embedded systems, and business sectors."
+        title="Inclined Careers | Connecting You to the Right Path | Career & Recruitment Support"
+        description="Inclined Careers connects exceptional professionals with US career opportunities and empowers employers with qualified talent across Technology, Healthcare, Data Centers, and Embedded Systems. 100% human-led guidance with 0% salary commission."
+        keywords="career guidance, US recruitment support, job placement, talent acquisition, IT recruiting, healthcare staffing, data center careers, embedded systems recruitment, resume preparation, no salary commission"
+        canonicalPath="/"
+        schema={{
+          "@type": "EmploymentAgency",
+          "@id": "https://inclinedcareers.in/#agency",
+          "name": "Inclined Careers",
+          "url": "https://inclinedcareers.in/",
+          "logo": "https://inclinedcareers.in/logo.PNG",
+          "description": "Connecting You to the Right Path. Human-led career guidance, dedicated recruitment support, and US job placement with 0% salary commission.",
+          "telephone": "+1-808-400-3068",
+          "email": "info@inclinedcareers.in",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "India" }
+          ],
+          "knowsAbout": [
+            "Information Technology Staffing",
+            "Healthcare Recruitment",
+            "Data Center Operations",
+            "Embedded Systems Engineering",
+            "Executive and Technical Search"
+          ]
+        }}
       />
 
       {/* 1. HERO SECTION */}

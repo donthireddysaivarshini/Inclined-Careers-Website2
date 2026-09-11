@@ -10,8 +10,28 @@ export default function About() {
   return (
     <main>
       <Meta
-        title="About Inclined Careers | Career & Recruitment Support"
-        description="Learn how Inclined Careers supports professionals and employers with human-led recruitment and career guidance."
+        title="About Us | Connecting People to the Right Path | Inclined Careers"
+        description="Learn about Inclined Careers' mission: connecting exceptional professionals and organizations with 1:1 human guidance, dedicated US recruiter support, and 0% salary commission."
+        keywords="about inclined careers, US recruitment agency, career guidance Hyderabad, recruitment support, transparent hiring, 0 percent commission recruitment, US talent partner"
+        canonicalPath="/about"
+        breadcrumbs={[{ name: "About Us", path: "/about" }]}
+        schema={{
+          "@type": "AboutPage",
+          "@id": "https://inclinedcareers.in/about#webpage",
+          "url": "https://inclinedcareers.in/about",
+          "name": "About Us | Connecting People to the Right Path | Inclined Careers",
+          "description": "Learn about Inclined Careers' mission: connecting exceptional professionals and organizations with 1:1 human guidance, dedicated US recruiter support, and 0% salary commission.",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Inclined Careers",
+            "url": "https://inclinedcareers.in/",
+            "foundingLocation": {
+              "@type": "Place",
+              "name": "Hyderabad, India"
+            },
+            "description": "A dedicated career and recruitment support partner empowering professionals across the US job market."
+          }
+        }}
       />
 
       {/* ABOUT US HERO SECTION - Minimalist, Compact, Centered */}

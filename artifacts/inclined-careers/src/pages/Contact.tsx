@@ -67,8 +67,31 @@ export default function Contact() {
   return (
     <main>
       <Meta
-        title="Contact Us | Inclined Careers"
-        description="Connect with the team at Inclined Careers. Whether you're seeking your next opportunity or hiring talent, our advisors are here to help."
+        title="Contact Us | Connect with Recruiter Support | Inclined Careers"
+        description="Get in touch with the team at Inclined Careers. Whether hiring qualified professionals or seeking career transition guidance, our dedicated advisors are here to help."
+        keywords="contact inclined careers, recruiter support, hire talent, candidate application, US career consultation, recruitment advisor Hyderabad, employer talent inquiry"
+        canonicalPath="/contact"
+        breadcrumbs={[{ name: "Contact Us", path: "/contact" }]}
+        schema={{
+          "@type": "ContactPage",
+          "@id": "https://inclinedcareers.in/contact#webpage",
+          "url": "https://inclinedcareers.in/contact",
+          "name": "Contact Us | Connect with Recruiter Support | Inclined Careers",
+          "description": "Connect with recruitment advisors at Inclined Careers for career guidance or employer staffing support.",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Inclined Careers",
+            "url": "https://inclinedcareers.in/",
+            "telephone": "+1-808-400-3068",
+            "email": "info@inclinedcareers.in",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "addressCountry": "IN"
+            }
+          }
+        }}
       />
 
       {/* HERO BANNER */}

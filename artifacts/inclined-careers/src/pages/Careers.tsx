@@ -10,8 +10,25 @@ export default function Careers() {
   return (
     <main>
       <Meta
-        title="Careers & Practice Areas | Inclined Careers"
-        description="Explore example career areas and positions supported by Inclined Careers across IT & Technology, Healthcare, Data Center Operations, Embedded Systems, and Business roles."
+        title="Find Your Next Opportunity | Practice Areas & Careers | Inclined Careers"
+        description="Explore career opportunities across IT & Technology, Healthcare, Data Center Operations, Embedded Systems, and Business. 100% confidential review with 0% post-placement commission."
+        keywords="career opportunities, IT jobs, healthcare roles, data center careers, embedded systems positions, recruiter support, US job placement, 0 commission recruitment"
+        canonicalPath="/careers"
+        breadcrumbs={[{ name: "Careers", path: "/careers" }]}
+        schema={{
+          "@type": "EmploymentAgency",
+          "@id": "https://inclinedcareers.in/careers#agency",
+          "name": "Inclined Careers - Practice Areas",
+          "url": "https://inclinedcareers.in/careers",
+          "description": "Dedicated recruiter support connecting exceptional professionals with top US employers across high-growth practice areas.",
+          "knowsAbout": [
+            "Information Technology & Cloud Infrastructure",
+            "Healthcare & Clinical Operations",
+            "Mission-Critical Data Center Operations",
+            "Embedded Systems & Firmware Engineering",
+            "Corporate Operations & Business Support"
+          ]
+        }}
       />
 
       {/* 1. HERO SECTION */}
